@@ -1,0 +1,94 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    font-family: inherit;
+}
+
+.featuredSection {
+    margin-bottom: 2rem;
+}
+
+.tabsContainer {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.25rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 2.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    font-family: inherit;
+}
+
+.tab:hover {
+    color: #737300;
+}
+
+.activeTab {
+    color: #737300;
+    font-weight: 600;
+}
+
+.activeLine {
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #737300;
+    border-radius: 999px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.emptyState {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 5rem 0;
+    color: #9ca3af;
+    font-size: 1.125rem;
+}

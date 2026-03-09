@@ -5,15 +5,20 @@
     min-height: calc(100vh - 160px);
 }
 
+.header {
+    margin-bottom: 3rem;
+}
+
 .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-olive);
-    margin-bottom: 2rem;
+    color: #737300;
+    margin-bottom: 1rem;
 }
 
 .description {
     font-size: 1.125rem;
-    color: #4b5563;
-    line-height: 1.75;
+    color: #6b7280;
+    max-width: 800px;
+    line-height: 1.6;
 }

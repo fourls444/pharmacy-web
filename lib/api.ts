@@ -15,6 +15,21 @@ export interface WebSettings {
     youtubeUrl?: string | null;
 }
 
+export type NewsCategory = 'news' | 'recruitment' | 'procurement';
+
+export interface News {
+    id: number;
+    title: string;
+    content: string;
+    thumbnailUrl?: string | null;
+    status: 'draft' | 'published';
+    category: NewsCategory;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt?: string | null;
+    isHighlight: boolean;
+}
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function getWebSettings(): Promise<WebSettings> {
@@ -42,5 +57,50 @@ export async function getWebSettings(): Promise<WebSettings> {
             siteNameTh: 'สภาเภสัชกรรม',
             siteNameEn: 'The Pharmacy Council of Thailand',
         };
+    }
+}
+
+export async function getNews(): Promise<News[]> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return [];
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/news`, {
+            next: { revalidate: 60 }, // Cache for 1 minute
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch news: ${res.statusText}`);
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error('Error fetching news:', error);
+        return [];
+    }
+}
+
+export async function getNewsById(id: string): Promise<News | null> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return null;
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/news/${id}`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            if (res.status === 404) return null;
+            throw new Error(`Failed to fetch news item: ${res.statusText}`);
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error(`Error fetching news item ${id}:`, error);
+        return null;
     }
 }

@@ -28,10 +28,11 @@ export default function Navbar() {
             <div className={styles.topBanner}>
                 <div className={styles.brandArea}>
                     <Image
-                        src="https://telehealththailand.vercel.app/assets/icon/partner/1.png"
+                        src="/images/icon.jpg"
                         alt="Pharmacy Council Logo"
                         width={65}
                         height={65}
+                        className={styles.logo}
                     />
                     <div>
                         <h1 className={`${styles.brandTitle} ThaiFont`}>
