@@ -1,0 +1,19 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 160px);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-olive);
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: #4b5563;
+    line-height: 1.75;
+}
