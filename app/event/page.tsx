@@ -1,4 +1,4 @@
-import styles from "./meetings.module.css";
+import styles from "./event.module.css";
 
 export default function MeetingsPage() {
     return (

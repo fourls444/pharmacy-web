@@ -96,16 +96,6 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Services Block */}
-                    <div className={styles.servicesSection}>
-                        <h3 className={styles.sectionTitle}>บริการอื่น ๆ</h3>
-                        <div className={styles.serviceLinks}>
-                            <Link href="#" className={styles.serviceLinkItem}>คำถามที่พบบ่อย</Link>
-                            <Link href="#" className={styles.serviceLinkItem}>งานการศึกษา</Link>
-                            <Link href="#" className={styles.serviceLinkItem}>มุมดาวน์โหลด</Link>
-                        </div>
-                    </div>
                 </div>
             </div>
 

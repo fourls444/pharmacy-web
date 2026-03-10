@@ -38,13 +38,7 @@ export default async function ContactPage() {
         <div className={styles.pageWrapper}>
             {/* Banner Section */}
             <header className={styles.banner}>
-                <Image
-                    src="https://pharmacycouncil.org/wp-content/uploads/2021/05/20210515_091802-scaled.jpg"
-                    alt="Pharmacy Council Building"
-                    fill
-                    className={styles.bannerImage}
-                    priority
-                />
+
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
                         <h1 className="ThaiFont">ติดต่อ</h1>
@@ -57,12 +51,7 @@ export default async function ContactPage() {
                 {/* Info Section */}
                 <div className={styles.infoSection}>
                     <div className={styles.buildingImageWrapper}>
-                        <Image
-                            src="https://pharmacycouncil.org/wp-content/uploads/2021/05/20210515_091802-scaled.jpg"
-                            alt="สำนักงานสภาเภสัชกรรม"
-                            fill
-                            className={styles.buildingImage}
-                        />
+                        {/* Placeholder grey background */}
                     </div>
                     <div className={styles.textDetails}>
                         <h2 className={`${styles.siteName} ThaiFont`}>{settings.siteNameTh || "สำนักงานเลขาธิการสภาเภสัชกรรม"}</h2>

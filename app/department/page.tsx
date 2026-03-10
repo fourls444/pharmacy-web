@@ -1,4 +1,4 @@
-import styles from "./organizations.module.css";
+import styles from "./department.module.css";
 
 export default function OrganizationsPage() {
     return (
