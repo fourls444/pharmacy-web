@@ -1,19 +1,229 @@
-.container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: calc(100vh - 160px);
+.pageWrapper {
+    min-height: 100vh;
+    background-color: #ffffff;
 }
 
-.title {
+.banner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.bannerImage {
+    object-fit: cover;
+    z-index: 0;
+}
+
+.bannerOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    z-index: 1;
+}
+
+.bannerContent h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bannerContent p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto 4rem;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.infoSection {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.buildingImageWrapper {
+    position: relative;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.buildingImage {
+    object-fit: cover;
+}
+
+.textDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.siteName {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-olive);
-    margin-bottom: 2rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
-.description {
+.address {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+.contactDetails {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #2d3748;
+}
+
+.contactDetails p {
+    margin: 0;
+}
+
+.contactDetails strong {
+    color: #737300;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+/* Cards Section */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: #737300;
+}
+
+.cardIconBox {
+    min-width: 54px;
+    height: 54px;
+    background: #fdfdf0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #737300;
+}
+
+.cardInfo h3 {
     font-size: 1.125rem;
-    color: #4b5563;
-    line-height: 1.75;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-kanit), sans-serif;
+}
+
+.cardInfo p {
+    font-size: 0.95rem;
+    color: #718096;
+    margin: 0;
+}
+
+.cardArrow {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #cbd5e0;
+    transition: color 0.3s ease;
+}
+
+.card:hover .cardArrow {
+    color: #737300;
+}
+
+/* Map Section */
+.mapSection {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mapWrapper {
+    width: 100%;
+    height: 450px;
+    background: #f7fafc;
+}
+
+.mapWrapper iframe {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 968px) {
+    .infoSection {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .banner {
+        height: 250px;
+    }
+
+    .bannerContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin-top: 1.5rem;
+    }
 }

@@ -51,9 +51,10 @@ export default function NewsCard({ news }: NewsCardProps) {
             </div>
             <div className={styles.content}>
                 <h3 className={styles.title}>{news.title}</h3>
-                <p className={styles.excerpt}>
-                    {news.content.substring(0, 120).replace(/<[^>]*>/g, '')}...
-                </p>
+                <div
+                    className={styles.excerpt}
+                    dangerouslySetInnerHTML={{ __html: news.content }}
+                />
                 <div className={styles.footer}>
                     <span className={styles.date}>{formattedDate}</span>
                 </div>

@@ -85,6 +85,22 @@
     overflow: hidden;
 }
 
+/* Keep only line breaks, remove other formatting for excerpt */
+.excerpt :global(*) {
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    display: inline;
+}
+
+.excerpt :global(p),
+.excerpt :global(div) {
+    display: block;
+    margin: 0;
+}
+
 .footer {
     margin-top: auto;
     display: flex;

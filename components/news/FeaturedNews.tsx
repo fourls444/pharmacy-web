@@ -84,9 +84,10 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                         {categoryLabels[current.category] || current.category}
                     </span>
                     <h3 className={styles.title}>{current.title}</h3>
-                    <div className={styles.content}>
-                        {current.content.substring(0, 250).replace(/<[^>]*>/g, '')}...
-                    </div>
+                    <div
+                        className={styles.content}
+                        dangerouslySetInnerHTML={{ __html: current.content }}
+                    />
                     <Link href={`/news/${current.id}`} className={styles.readMore}>
                         อ่านเพิ่มเติม
                     </Link>

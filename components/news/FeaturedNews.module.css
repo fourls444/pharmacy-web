@@ -118,10 +118,26 @@
     margin-bottom: 2.5rem;
     line-height: 1.7;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Keep only line breaks, remove other formatting for content preview */
+.content :global(*) {
+    font-size: 1.125rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    display: inline;
+}
+
+.content :global(p),
+.content :global(div) {
+    display: block;
+    margin: 0;
 }
 
 .readMore {
