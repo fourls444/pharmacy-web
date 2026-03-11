@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { News } from '@/lib/api';
 import styles from './FeaturedNews.module.css';
 
@@ -19,21 +19,37 @@ const categoryLabels: Record<string, string> = {
 
 export default function FeaturedNews({ news }: FeaturedNewsProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
 
-    const nextNews = () => {
+    const nextNews = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % news.length);
-    };
+    }, [news.length]);
 
     const prevNews = () => {
         setCurrentIndex((prev) => (prev - 1 + news.length) % news.length);
     };
+
+    // Auto-slide effect
+    useEffect(() => {
+        if (news.length <= 1 || isPaused) return;
+
+        const timer = setInterval(() => {
+            nextNews();
+        }, 5000); // 5 seconds interval
+
+        return () => clearInterval(timer);
+    }, [news.length, isPaused, nextNews]);
 
     const current = news[currentIndex];
 
     if (!current) return null;
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+        >
             <div className={styles.header}>
                 <h2 className={styles.sectionTitle}>เรื่องเด่น</h2>
                 {news.length > 1 && (
@@ -48,8 +64,8 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                 )}
             </div>
 
-            <div className={styles.card}>
-                <div className={styles.imageSection}>
+            <div className={styles.card} key={currentIndex}>
+                <div className={`${styles.imageSection} ${styles.fadeIn}`}>
                     {current.thumbnailUrl ? (
                         <Image
                             src={current.thumbnailUrl}
@@ -59,18 +75,29 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                         />
                     ) : (
                         <div className={styles.placeholder}>
-                            <ImageIcon size={64} strokeWidth={1} color="#9ca3af" />
+                            {/* Empty gray placeholder */}
                         </div>
                     )}
                 </div>
-                <div className={styles.contentSection}>
-                    <span className={styles.badge}>
-                        {categoryLabels[current.category] || current.category}
-                    </span>
+                <div className={`${styles.contentSection} ${styles.slideUp}`}>
+                    <div className={styles.badgeRow}>
+                        <span className={styles.badge}>
+                            {categoryLabels[current.category] || current.category}
+                        </span>
+                        <span className={styles.date}>
+                            <Calendar size={14} className={styles.dateIcon} />
+                            {new Date(current.publishedAt || current.createdAt).toLocaleDateString('th-TH', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                            })}
+                        </span>
+                    </div>
                     <h3 className={styles.title}>{current.title}</h3>
-                    <p className={styles.content}>
-                        {current.content.substring(0, 250).replace(/<[^>]*>/g, '')}...
-                    </p>
+                    <div
+                        className={styles.content}
+                        dangerouslySetInnerHTML={{ __html: current.content }}
+                    />
                     <Link href={`/news/${current.id}`} className={styles.readMore}>
                         อ่านเพิ่มเติม
                     </Link>

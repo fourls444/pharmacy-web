@@ -1,20 +1,27 @@
 import { getNews } from "@/lib/api";
 import NewsContainer from "@/components/news/NewsContainer";
+import Image from "next/image";
 import styles from "./news.module.css";
 
 export default async function NewsPage() {
     const allNews = await getNews();
 
     return (
-        <div className={styles.container}>
-            <header className={styles.header}>
-                <h1 className={`${styles.title} ThaiFont`}>ข่าวสาร</h1>
-                <p className={`${styles.description} ThaiFont`}>
-                    ติดตามข่าวประชาสัมพันธ์ ประกาศรับสมัครงาน และข่าวสารล่าสุดจากสภาเภสัชกรรม
-                </p>
+        <div className={styles.pageWrapper}>
+            {/* Banner Section */}
+            <header className={styles.banner}>
+
+                <div className={styles.bannerOverlay}>
+                    <div className={styles.bannerContent}>
+                        <h1 className="ThaiFont">ข่าวสาร</h1>
+                        <p className="ThaiFont">ติดตามทุกข่าวสารสำคัญของสภาเภสัชกรรม</p>
+                    </div>
+                </div>
             </header>
 
-            <NewsContainer allNews={allNews} />
+            <div className={styles.container}>
+                <NewsContainer allNews={allNews} />
+            </div>
         </div>
     );
 }

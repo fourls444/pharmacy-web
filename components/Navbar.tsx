@@ -9,9 +9,9 @@ import styles from "./Navbar.module.css";
 const navLinks = [
     { name: "หน้าแรก", href: "/" },
     { name: "เกี่ยวกับองค์กร", href: "/about" },
-    { name: "หน่วยงาน", href: "/organizations", hasDropdown: true },
+    { name: "หน่วยงาน", href: "/department", hasDropdown: true },
     { name: "งานบริการ", href: "/services" },
-    { name: "งานประชุม", href: "/meetings" },
+    { name: "งานประชุม", href: "/event" },
     { name: "ข่าวสาร", href: "/news" },
     { name: "กฎหมาย", href: "/laws" },
     { name: "บริการอื่นๆ", href: "/other-services" },

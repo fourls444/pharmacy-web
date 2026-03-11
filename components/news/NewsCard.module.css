@@ -33,7 +33,7 @@
 .placeholder {
     width: 100%;
     height: 100%;
-    background-color: #f9fafb;
+    background-color: #e5e7eb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +85,22 @@
     overflow: hidden;
 }
 
+/* Keep only line breaks, remove other formatting for excerpt */
+.excerpt :global(*) {
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    display: inline;
+}
+
+.excerpt :global(p),
+.excerpt :global(div) {
+    display: block;
+    margin: 0;
+}
+
 .footer {
     margin-top: auto;
     display: flex;
@@ -93,5 +109,12 @@
 
 .date {
     font-size: 0.75rem;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.dateIcon {
     color: #9ca3af;
 }
