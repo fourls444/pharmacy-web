@@ -13,8 +13,6 @@ export default async function NewsPage() {
 
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-                        <h1 className="ThaiFont">ข่าวสาร</h1>
-                        <p className="ThaiFont">ติดตามทุกข่าวสารสำคัญของสภาเภสัชกรรม</p>
                     </div>
                 </div>
             </header>

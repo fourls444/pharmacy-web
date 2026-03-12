@@ -176,7 +176,7 @@
     .serviceListGrid {
         grid-template-columns: 1fr;
     }
-    
+
     .serviceLabel {
         min-width: 100px;
         font-size: 22px;
