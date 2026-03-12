@@ -1,3 +1,4 @@
+/* === About Layout === */
 .pageWrapper {
     min-height: 100vh;
     background-color: #ffffff;
@@ -8,56 +9,33 @@
     width: 100%;
     height: 350px;
     overflow: hidden;
-    background-color: #e5e7eb;
+    background: url('/images/about/imgbg2.png') center/cover no-repeat;
 }
 
-.bannerOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(82, 82, 33, 0.4) 0%, rgba(30, 41, 59, 0.7) 100%);
+
+
+
+
+/* === Layout: Sidebar + Content === */
+.layoutContainer {
+    max-width: 80%;
+    margin: 3rem auto 4rem;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 10%;
-    z-index: 1;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
-.bannerContent h1 {
-    color: #fff;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.contentArea {
+    flex: 1;
+    min-width: 0;
 }
 
-.bannerContent p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 4rem auto 4rem;
-    padding: 0 1.5rem;
-    position: relative;
-    z-index: 2;
-}
-
-.title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 2rem;
-}
-
-.content {
-    font-size: 1.125rem;
-    color: #4b5563;
-    line-height: 1.8;
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .layoutContainer {
+        flex-direction: column;
+        max-width: 90%;
+    }
 }
 
 @media (max-width: 640px) {
@@ -67,9 +45,5 @@
 
     .bannerContent h1 {
         font-size: 2.5rem;
-    }
-
-    .container {
-        margin-top: 2rem;
     }
 }

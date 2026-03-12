@@ -1,0 +1,74 @@
+/* === About Sidebar === */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: #f8f9fa; /* 🔴 เปลี่ยนเป็นสีเทาอ่อนตามรูป */
+    border-radius: 20px; /* มุมมนสวยงาม */
+    padding: 2.5rem 2rem; /* ระยะขอบด้านใน */
+    position: sticky;
+    top: 2rem;
+    
+    /* 🔴 เอา box-shadow ของเดิมทิ้งไป เพื่อให้กลืนไปกับพื้นหลัง */
+}
+
+.sidebarTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 2rem 0; /* ระยะห่างระหว่างหัวข้อกับเมนูแรก */
+}
+
+.sidebarNav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* ระยะห่างระหว่างบรรทัดเมนู */
+}
+
+.sidebarLink {
+    display: block;
+    font-size: 1.05rem;
+    color: #6b7280; /* สีเทากลางๆ สำหรับเมนูที่ยังไม่ได้เลือก */
+    text-decoration: none;
+    transition: color 0.2s;
+    
+    /* 🔴 เทคนิคทำให้เส้นใต้กว้างเท่าตัวหนังสือพอดี */
+    width: fit-content; 
+    position: relative;
+    padding-bottom: 0.4rem; /* ระยะห่างระหว่างตัวหนังสือกับเส้นใต้ */
+}
+
+.sidebarLink:hover {
+    color: #111827; /* เอาเมาส์ชี้แล้วเป็นสีดำเข้ม */
+}
+
+/* === Active State (เมนูที่กำลังเลือก) === */
+.sidebarLinkActive {
+    color: #111827; /* สีดำเข้ม */
+    font-weight: 700; /* ตัวหนา */
+}
+
+/* 🔴 สร้างขีดเส้นใต้สีดำ */
+.sidebarLinkActive::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #111827; /* เส้นสีดำ */
+}
+
+/* === Responsive (มือถือ/แท็บเล็ต) === */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        padding: 2rem;
+    }
+
+    .sidebarNav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+    }
+}

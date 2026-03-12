@@ -47,7 +47,7 @@
 .container {
     max-width: 1200px;
     margin: 3rem auto 4rem;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 2rem;
     position: relative;
     z-index: 2;
 }
@@ -188,6 +188,7 @@
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 4rem;
 }
 
 .mapWrapper {
