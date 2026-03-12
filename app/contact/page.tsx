@@ -38,11 +38,9 @@ export default async function ContactPage() {
         <div className={styles.pageWrapper}>
             {/* Banner Section */}
             <header className={styles.banner}>
-
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-                        <h1 className="ThaiFont">ติดต่อ</h1>
-                        <p className="ThaiFont">ติดต่อสอบถาม</p>
+
                     </div>
                 </div>
             </header>
@@ -51,7 +49,12 @@ export default async function ContactPage() {
                 {/* Info Section */}
                 <div className={styles.infoSection}>
                     <div className={styles.buildingImageWrapper}>
-                        {/* Placeholder grey background */}
+                        <Image
+                            src="/images/contact/image.png"
+                            alt="Contact Section Image"
+                            fill
+                            className={styles.buildingImage}
+                        />
                     </div>
                     <div className={styles.textDetails}>
                         <h2 className={`${styles.siteName} ThaiFont`}>{settings.siteNameTh || "สำนักงานเลขาธิการสภาเภสัชกรรม"}</h2>

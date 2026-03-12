@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Image from "next/image";
 import DocumentSearch from "@/components/other-services/DocumentSearch";
 import styles from "./other-services.module.css";
 
@@ -36,17 +35,13 @@ export default function OtherServicesPage() {
     return (
         <div className={styles.pageWrapper}>
             {/* Banner Section */}
-            <div className={styles.banner}>
-                <Image 
-                    src="/images/other-services/header page.png" 
-                    alt="Other Services Banner" 
-                    width={1920}
-                    height={350}
-                    quality={100}
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                    priority
-                />
-            </div>
+            <header className={styles.banner}>
+                <div className={styles.bannerOverlay}>
+                    <div className={styles.bannerContent}>
+                        
+                    </div>
+                </div>
+            </header>
 
             {/* Search Section */}
             <section className={styles.searchSection}>
