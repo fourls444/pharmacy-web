@@ -56,7 +56,8 @@
 }
 
 .dropdownIcon {
-  color: #374151; /* Darker than chevron */
+  color: #374151;
+  /* Darker than chevron */
 }
 
 .chevron {
@@ -142,18 +143,17 @@
 
 /* === Search Button === */
 .searchButton {
-  min-width: 110px;
-  height: 48px;
-  padding: 0 1.5rem;
-  background-color: #9fa640; /* matches reference image more closely */
+  padding: 0.65rem 1.75rem;
+  background: linear-gradient(90deg, rgba(197, 193, 120, 1) 0%, rgba(115, 115, 0, 1) 100%),
+    linear-gradient(0deg, rgba(115, 115, 0, 1) 0%, rgba(115, 115, 0, 1) 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s;
 }
 
 .searchButton:hover {

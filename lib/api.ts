@@ -21,6 +21,7 @@ export interface News {
     id: number;
     title: string;
     content: string;
+    excerpt?: string | null;
     thumbnailUrl?: string | null;
     status: 'draft' | 'published';
     category: NewsCategory;
