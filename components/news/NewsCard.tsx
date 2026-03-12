@@ -42,25 +42,24 @@ export default function NewsCard({ news }: NewsCardProps) {
                         {/* Empty gray placeholder */}
                     </div>
                 )}
-                <span
-                    className={styles.badge}
-                    style={{ '--badge-bg': categoryColors[news.category] || '#737300' } as React.CSSProperties}
-                >
-                    {categoryLabels[news.category] || news.category}
-                </span>
             </div>
             <div className={styles.content}>
-                <h3 className={styles.title}>{news.title}</h3>
-                <div
-                    className={styles.excerpt}
-                    dangerouslySetInnerHTML={{ __html: news.content }}
-                />
-                <div className={styles.footer}>
+                <div className={styles.badgeRow}>
+                    <span
+                        className={styles.badge}
+                        style={{ '--badge-bg': categoryColors[news.category] || '#737300' } as React.CSSProperties}
+                    >
+                        {categoryLabels[news.category] || news.category}
+                    </span>
                     <span className={styles.date}>
                         <Calendar size={14} className={styles.dateIcon} />
                         {formattedDate}
                     </span>
                 </div>
+                <h3 className={styles.title}>{news.title}</h3>
+                <p className={styles.excerpt}>
+                    {news.excerpt}
+                </p>
             </div>
         </Link>
     );

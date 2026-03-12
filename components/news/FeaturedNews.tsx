@@ -94,10 +94,9 @@ export default function FeaturedNews({ news }: FeaturedNewsProps) {
                         </span>
                     </div>
                     <h3 className={styles.title}>{current.title}</h3>
-                    <div
-                        className={styles.content}
-                        dangerouslySetInnerHTML={{ __html: current.content }}
-                    />
+                    <p className={styles.content}>
+                        {current.excerpt}
+                    </p>
                     <Link href={`/news/${current.id}`} className={styles.readMore}>
                         อ่านเพิ่มเติม
                     </Link>
