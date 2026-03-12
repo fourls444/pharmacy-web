@@ -47,7 +47,7 @@
 .container {
     max-width: 1200px;
     margin: 3rem auto 4rem;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 4rem;
     position: relative;
     z-index: 2;
 }
