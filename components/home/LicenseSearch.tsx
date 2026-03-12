@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, SlidersHorizontal, ChevronDown } from 'lucide-react';
+import { Search, SlidersHorizontal, ChevronDown , ListFilter} from 'lucide-react';
 import styles from './LicenseSearch.module.css';
 
 const searchOptions = [
@@ -38,7 +38,7 @@ export default function LicenseSearch() {
             className={styles.dropdownButton}
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <SlidersHorizontal size={16} className={styles.dropdownIcon} />
+            <ListFilter size={16} className={styles.dropdownIcon} />
             <span>{selectedOption.label}</span>
             <ChevronDown size={16} className={styles.chevron} />
           </button>

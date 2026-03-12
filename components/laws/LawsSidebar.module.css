@@ -1,0 +1,68 @@
+/* === Laws Sidebar === */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+    background-color: #F9F9F9;
+    padding: 1rem;
+    border-radius: 24px;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 1rem 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.link {
+    display: block;
+    padding: 0.85rem 1.25rem;
+    font-size: 1rem;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: left;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.link:hover {
+    background: #eeeeee;
+    color: #111827;
+}
+
+.linkActive {
+    background: #f5f5e8;
+    color: #111827;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .link {
+        padding: 0.6rem 1rem;
+    }
+}

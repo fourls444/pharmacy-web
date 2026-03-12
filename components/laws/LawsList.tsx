@@ -1,0 +1,129 @@
+import { ChevronLeft, ChevronRight, ListFilter } from "lucide-react";
+import { LawItem } from "@/lib/api";
+import styles from "./LawsList.module.css";
+
+interface LawsListProps {
+  title: string;
+  laws: LawItem[];
+  yearSort: "desc" | "asc";
+  currentPage: number;
+  totalPages: number;
+  onYearSortToggle: () => void;
+  onPageChange: (page: number) => void;
+}
+
+export default function LawsList({
+  title,
+  laws,
+  yearSort,
+  currentPage,
+  totalPages,
+  onYearSortToggle,
+  onPageChange,
+}: LawsListProps) {
+  const getPageNumbers = () => {
+    const pages: (number | "...")[] = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push("...");
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (currentPage < totalPages - 2) pages.push("...");
+      pages.push(totalPages);
+    }
+    return pages;
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
+        <h2 className={`${styles.title} ThaiFont`}>{title}</h2>
+        <button
+          className={`${styles.yearSort} ThaiFont`}
+          onClick={onYearSortToggle}
+        >
+          <ListFilter size={16} />
+          ปีที่ประกาศ {yearSort === "desc" ? "↓" : "↑"}
+        </button>
+      </div>
+
+      <p className={`${styles.listLabel} ThaiFont`}>รายการ</p>
+
+      {laws.length === 0 ? (
+        <div className={`${styles.emptyState} ThaiFont`}>
+          ไม่พบข้อมูลกฎหมายในหมวดนี้
+        </div>
+      ) : (
+        <div className={styles.list}>
+          {laws.map((law) => (
+            <div key={law.id} className={styles.item}>
+              <span className={styles.bullet} />
+              {law.pdfUrl ? (
+                <a
+                  href={law.pdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${styles.itemLink} ThaiFont`}
+                >
+                  {law.title}
+                </a>
+              ) : (
+                <span className={`${styles.itemTitle} ThaiFont`}>
+                  {law.title}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className={styles.pagination}>
+          <button
+            className={`${styles.pageBtn} ${
+              currentPage === 1 ? styles.pageBtnDisabled : ""
+            }`}
+            onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            <ChevronLeft size={16} />
+          </button>
+
+          {getPageNumbers().map((page, idx) =>
+            page === "..." ? (
+              <span key={`ellipsis-${idx}`} className={styles.pageEllipsis}>
+                ...
+              </span>
+            ) : (
+              <button
+                key={page}
+                className={`${styles.pageBtn} ${
+                  currentPage === page ? styles.pageBtnActive : ""
+                }`}
+                onClick={() => onPageChange(page as number)}
+              >
+                {page}
+              </button>
+            )
+          )}
+
+          <button
+            className={`${styles.pageBtn} ${
+              currentPage === totalPages ? styles.pageBtnDisabled : ""
+            }`}
+            onClick={() =>
+              currentPage < totalPages && onPageChange(currentPage + 1)
+            }
+            disabled={currentPage === totalPages}
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}

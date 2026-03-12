@@ -8,7 +8,7 @@
 .banner {
     width: 100%;
     height: 350px;
-    background-image: url("/images/event-banner.jpg");
+    background-image: url("/images/event/event-banner.jpg");
     background-size: cover;
     background-position: left;
 }

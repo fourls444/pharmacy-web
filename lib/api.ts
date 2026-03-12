@@ -181,3 +181,42 @@ export async function getAgencies(): Promise<Agency[]> {
         return [];
     }
 }
+
+// ===== Laws =====
+
+export interface LawItem {
+    id: number;
+    category: string;
+    title: string;
+    year: number | null;
+    announcedAt: string | null;
+    order: number;
+    pdfUrl: string | null;
+    status: string;
+    createdAt: string;
+}
+
+export async function getLawsByCategory(category: string): Promise<LawItem[]> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return [];
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/laws/${category}`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch laws: ${res.statusText}`);
+        }
+
+        const data = await res.json();
+        // Only return online status items
+        return Array.isArray(data) ? data.filter((item: LawItem) => item.status === 'online') : [];
+    } catch (error) {
+        console.error('Error fetching laws:', error);
+        return [];
+    }
+}
+
