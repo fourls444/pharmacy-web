@@ -11,7 +11,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/event1.jpg",
+        image: "images/event/event1.jpg",
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["เภสัชกร"],
         count: "100 คน",
-        image: "/images/event2.jpg",
+        image: "/images/event/event2.jpg",
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป"],
         count: "เต็ม",
-        image: "/images/event3.jpg",
+        image: "/images/event/event3.jpg",
     },
     {
         id: 4,
@@ -44,7 +44,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/event4.jpg",
+        image: "/images/event/event4.jpg",
         status: "past"
     },
     {
@@ -56,7 +56,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/event5.jpg",
+        image: "/images/event/event5.jpg",
         status: "past"
     },
 ];
@@ -84,7 +84,7 @@ export default function MeetingsPage() {
 
                     <div className={styles.recommendCard}>
                         <img
-                            src="/images/event1.jpg"
+                            src="/images/event/event1.jpg"
                             className={styles.recommendImage}
                             alt="Meeting preview"
                         />
