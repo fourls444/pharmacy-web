@@ -22,7 +22,7 @@ export default function DepartmentAgencies({ title, agencies }: DepartmentAgenci
         <h2 className={styles.sectionTitle}>{title}</h2>
 
         {/* Hero Card (First Agency) */}
-        <Link href={hero.url} target="_blank" rel="noreferrer" className={styles.heroCard}>
+        <Link href={hero.url || "#"} target={hero.url ? "_blank" : "_self"} rel="noreferrer" className={styles.heroCard}>
           <div className={styles.heroContent}>
             {hero.iconUrl && (
               <img src={hero.iconUrl} alt="" className={styles.heroIcon} />
@@ -52,8 +52,8 @@ export default function DepartmentAgencies({ title, agencies }: DepartmentAgenci
             {rest.map((agency) => (
               <Link
                 key={agency.id}
-                href={agency.url}
-                target="_blank"
+                href={agency.url || "#"}
+                target={agency.url ? "_blank" : "_self"}
                 rel="noreferrer"
                 className={styles.agencyCard}
               >

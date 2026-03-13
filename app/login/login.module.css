@@ -111,7 +111,8 @@
 .submitBtn {
     width: 100%;
     padding: 1.1rem;
-    background-color: #9da342;
+      background : linear-gradient(90deg, rgba(197, 193, 120, 1) 0%, rgba(115, 115, 0, 1) 100%),
+    linear-gradient(0deg, rgba(115, 115, 0, 1) 0%, rgba(115, 115, 0, 1) 100%); 
     color: white;
     border: none;
     border-radius: 12px;

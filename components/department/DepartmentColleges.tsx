@@ -43,8 +43,8 @@ export default function DepartmentColleges({ title, agencies }: DepartmentColleg
           {agencies.map((agency) => (
             <Link
               key={agency.id}
-              href={agency.url}
-              target="_blank"
+              href={agency.url || "#"}
+              target={agency.url ? "_blank" : "_self"}
               rel="noreferrer"
               className={styles.collegeCard}
             >

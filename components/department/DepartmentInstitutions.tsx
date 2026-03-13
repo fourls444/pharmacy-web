@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Agency } from "@/lib/api";
 import styles from "./DepartmentInstitutions.module.css";
 
@@ -44,10 +45,10 @@ export default function DepartmentInstitutions({ title, agencies }: DepartmentIn
           {columns.map((col, colIdx) => (
             <div key={colIdx} className={styles.listColumn}>
               {col.map((agency) => (
-                <div key={agency.id} className={styles.listItem}>
+                <Link key={agency.id} href={agency.url || "#"} target={agency.url ? "_blank" : "_self"} rel="noreferrer" className={styles.listItem}>
                   <span className={styles.bullet} />
                   {agency.name}
-                </div>
+                </Link>
               ))}
             </div>
           ))}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Agency } from "@/lib/api";
 import styles from "./DepartmentOther.module.css";
 
@@ -19,9 +20,11 @@ export default function DepartmentOther({ title, agencies }: DepartmentOtherProp
 
           <ul className={styles.list}>
             {agencies.map((agency) => (
-              <li key={agency.id} className={styles.listItem}>
-                <span className={styles.bullet} />
-                {agency.name}
+              <li key={agency.id}>
+                <Link href={agency.url || "#"} target={agency.url ? "_blank" : "_self"} rel="noreferrer" className={styles.listItem}>
+                  <span className={styles.bullet} />
+                  {agency.name}
+                </Link>
               </li>
             ))}
           </ul>
