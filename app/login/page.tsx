@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { User, Lock, EyeOff, Globe, ChevronLeft } from "lucide-react";
@@ -31,6 +31,16 @@ export default function LoginPage() {
     }
   };
 
+  useEffect(() => {
+    if (step === "otp") {
+      // Small timeout to ensure the DOM has updated and element is rendered
+      setTimeout(() => {
+        const firstOtpInput = document.getElementById("otp-0");
+        firstOtpInput?.focus();
+      }, 50);
+    }
+  }, [step]);
+
   const handleVerifyOtp = () => {
     const enteredOtp = otp.join("");
     setOtpError("");
@@ -53,6 +63,13 @@ export default function LoginPage() {
         const nextInput = document.getElementById(`otp-${index + 1}`);
         nextInput?.focus();
       }
+    }
+  };
+
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      const prevInput = document.getElementById(`otp-${index - 1}`);
+      prevInput?.focus();
     }
   };
 
@@ -85,9 +102,16 @@ export default function LoginPage() {
                     className={styles.formLogo}
                   />
                   <h2>ระบบบริการผู้ประกอบวิชาชีพเภสัชกรรม</h2>
-                  <p style={{ fontSize: "0.8rem", color: "#666", marginTop: "5px" }}>
-                    (Mock: {MOCK_ID} / {MOCK_PASSWORD})
-                  </p>
+                  <div className={styles.mockBadge}>
+                    <div className={styles.mockItem}>
+                      <span className={styles.mockLabel}>เลขที่ใบอนุญาต:</span>
+                      <span className={styles.mockValue}>{MOCK_ID}</span>
+                    </div>
+                    <div className={styles.mockItem}>
+                      <span className={styles.mockLabel}>รหัสผ่าน:</span>
+                      <span className={styles.mockValue}>{MOCK_PASSWORD}</span>
+                    </div>
+                  </div>
                 </div>
 
                 <form className={styles.form} onSubmit={handleLogin}>
@@ -95,10 +119,17 @@ export default function LoginPage() {
                     <div className={styles.inputWrapper}>
                       <User className={styles.inputIcon} size={20} />
                       <input
+                        id="login-id"
                         type="text"
                         placeholder="ระบุเลขที่ใบอนุญาต ฯ"
                         value={id}
                         onChange={(e) => setId(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            document.getElementById('login-password')?.focus();
+                          }
+                        }}
                       />
                     </div>
                   </div>
@@ -107,10 +138,17 @@ export default function LoginPage() {
                     <div className={styles.inputWrapper}>
                       <Lock className={styles.inputIcon} size={20} />
                       <input
+                        id="login-password"
                         type="password"
                         placeholder="รหัสผ่าน"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            document.getElementById('login-id')?.focus();
+                          }
+                        }}
                       />
                       <EyeOff className={styles.eyeIcon} size={20} />
                     </div>
@@ -155,11 +193,13 @@ export default function LoginPage() {
                 <p className={styles.otpSubtitle}>
                   กรอกรหัสยืนยัน OTP ที่ส่งไปยังเบอร์โทรศัพท์มือถือ<br />
                   XXX-XXX-0440 รหัสอ้างอิง : A0990
-                  <br />
-                  <span style={{ fontSize: "0.8rem", color: "#666" }}>
-                    (Mock OTP: {MOCK_OTP})
-                  </span>
                 </p>
+                <div className={styles.mockBadge}>
+                  <div className={styles.mockItem}>
+                    <span className={styles.mockLabel}>Mock OTP:</span>
+                    <span className={styles.mockValue} style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>{MOCK_OTP}</span>
+                  </div>
+                </div>
 
                 <div className={styles.otpInputGroup}>
                   {otp.map((digit, i) => (
@@ -171,6 +211,8 @@ export default function LoginPage() {
                       className={styles.otpInput}
                       value={digit}
                       onChange={(e) => handleOtpChange(i, e.target.value)}
+                      onKeyDown={(e) => handleKeyDown(i, e)}
+                      autoComplete="off"
                     />
                   ))}
                 </div>

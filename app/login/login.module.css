@@ -15,7 +15,8 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem;
-    min-height: calc(100vh - 80px); /* Account for footer */
+    min-height: calc(100vh - 80px);
+    /* Account for footer */
 }
 
 .loginCard {
@@ -111,8 +112,8 @@
 .submitBtn {
     width: 100%;
     padding: 1.1rem;
-      background : linear-gradient(90deg, rgba(197, 193, 120, 1) 0%, rgba(115, 115, 0, 1) 100%),
-    linear-gradient(0deg, rgba(115, 115, 0, 1) 0%, rgba(115, 115, 0, 1) 100%); 
+    background: linear-gradient(90deg, rgba(197, 193, 120, 1) 0%, rgba(115, 115, 0, 1) 100%),
+        linear-gradient(0deg, rgba(115, 115, 0, 1) 0%, rgba(115, 115, 0, 1) 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -229,7 +230,8 @@
     flex-wrap: wrap;
 }
 
-.etdaLogo, .dopaLogo {
+.etdaLogo,
+.dopaLogo {
     object-fit: contain;
 }
 
@@ -238,10 +240,12 @@
     .cardLeft {
         display: none;
     }
+
     .loginCard {
         width: 500px;
         height: auto;
     }
+
     .cardRight {
         padding: 3rem 2rem;
     }
@@ -345,4 +349,44 @@
 
 .backToLogin:hover {
     text-decoration: underline;
+}
+
+.mockBadge {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #fef9c3;
+    border: 1px dashed #ca8a04;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mockBadge p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #854d0e;
+}
+
+.mockItem {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: left;
+}
+
+.mockLabel {
+    color: #a16207;
+    font-weight: 500 !important;
+}
+
+.mockValue {
+    color: #000;
+    font-family: monospace;
+    background: white;
+    padding: 0 4px;
+    border-radius: 4px;
 }
