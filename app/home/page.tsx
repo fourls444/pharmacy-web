@@ -11,11 +11,11 @@ import Image from "next/image";
 
 export const dynamic = 'force-dynamic';
 
-const publicServices = [
+const publicService = [
   {
     title: "ขอคำปรึกษาเรื่องยา",
     desc: "แนะนำการใช้ยาอย่าง\nถูกต้องโดยเภสัชกร",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -26,7 +26,7 @@ const publicServices = [
   {
     title: "ร้านยาใกล้ฉัน",
     desc: "ค้นหาร้านยาและเวลาเปิด\nปิดใกล้ตำแหน่งของคุณ",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
@@ -37,7 +37,7 @@ const publicServices = [
   {
     title: "ร้องเรียนเภสัชกร",
     desc: "แจ้งปัญหาการให้บริการ\nหรือพฤติกรรมไม่เหมาะสม",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -49,7 +49,7 @@ const publicServices = [
   {
     title: "แจ้งเบาะแสร้านยา",
     desc: "รายงานร้านยาที่อาจไม่ปฏิบัติ\nตามมาตรฐาน",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -58,11 +58,11 @@ const publicServices = [
   },
 ];
 
-const pharmacistServices = [
+const pharmacistService = [
   {
     title: "ประกาศ\nนียบัตร",
     desc: "คำขอประกาศนียบัตร\nวิชาชีพเภสัชกรรม",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/>
@@ -73,7 +73,7 @@ const pharmacistServices = [
   {
     title: "ต่อใบ\nอนุญาต",
     desc: "คำขอต่ออายุใบอนุญาตเป็น\nผู้ประกอบวิชาชีพเภสัชกรรม",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
@@ -84,7 +84,7 @@ const pharmacistServices = [
   {
     title: "คำขอ\nสมาชิก",
     desc: "คำขอสมัครสมาชิก\nสภาเภสัชกรรม",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
@@ -95,7 +95,7 @@ const pharmacistServices = [
   {
     title: "คำขอ\nขึ้นทะเบียน",
     desc: "คำขอขึ้นทะเบียนและรับใบ\nอนุญาตเป็นผู้ประกอบวิชาชีพ",
-    href: "/services",
+    href: "/service",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -172,14 +172,14 @@ export default async function Home() {
 
 
       {/* === บริการประชาชน === */}
-      <section className={styles.servicesSection}>
+      <section className={styles.serviceSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>บริการประชาชน</h2>
-            <Link href="/services" className={styles.viewAll}>ดูทั้งหมด →</Link>
+            <Link href="/service" className={styles.viewAll}>ดูทั้งหมด →</Link>
           </div>
           <div className={styles.publicGrid}>
-            {publicServices.map((svc, i) => (
+            {publicService.map((svc, i) => (
               <Link key={i} href={svc.href} className={styles.publicCard}>
                 <div className={styles.publicCardIcon}>{svc.icon}</div>
                 <h3 className={styles.publicCardTitle}>{svc.title}</h3>
@@ -191,14 +191,14 @@ export default async function Home() {
       </section>
 
       {/* === บริการเภสัชกร === */}
-      <section className={styles.servicesSection}>
+      <section className={styles.serviceSection}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>บริการเภสัชกร</h2>
-            <Link href="/services" className={styles.viewAll}>ดูทั้งหมด →</Link>
+            <Link href="/service" className={styles.viewAll}>ดูทั้งหมด →</Link>
           </div>
           <div className={styles.pharmaGrid}>
-            {pharmacistServices.map((svc, i) => (
+            {pharmacistService.map((svc, i) => (
               <Link key={i} href={svc.href} className={styles.pharmaCard}>
                 <div className={styles.pharmaCardIcon}>{svc.icon}</div>
                 <h3 className={styles.pharmaCardTitle}>{svc.title}</h3>
@@ -211,7 +211,7 @@ export default async function Home() {
 
 
             {/* === บทบาทหน้าที่หลักของเภสัช === */}
-      <section className={styles.servicesSection}>
+      <section className={styles.serviceSection}>
         <div className={styles.container}>
           <div className={styles.roleGrid}>
             

@@ -1,6 +1,6 @@
 import styles from "./ServiceList.module.css";
 
-const services = [
+const serviceData = [
   { label: "สภ.12", desc: "คำขอสมัครเป็นสมาชิกสภาเภสัชกรรม" },
   { label: "สภ.17", desc: "คำขอขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
   { label: "สภ.17/1", desc: "คำขอต่ออายุใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
@@ -25,7 +25,7 @@ export default function ServiceList() {
     <section className={styles.section}>
       <h2 className="ThaiFont">บริการเภสัชกร</h2>
       <div className={styles.serviceListGrid}>
-        {services.map((item, index) => (
+        {serviceData.map((item, index) => (
           <div key={index} className={styles.serviceListItem}>
             <div className={`${styles.serviceLabel} ThaiFont`}>{item.label}</div>
             <div className={`${styles.serviceDesc} ThaiFont`}>{item.desc}</div>

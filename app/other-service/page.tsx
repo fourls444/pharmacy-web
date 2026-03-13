@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import DocumentSearch from "@/components/other-services/DocumentSearch";
-import styles from "./other-services.module.css";
+import DocumentSearch from "@/components/other-service/DocumentSearch";
+import styles from "./other-service.module.css";
 
 const categories = [
     "งานการศึกษา",
