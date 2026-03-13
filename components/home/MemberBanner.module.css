@@ -1,0 +1,130 @@
+.memberSection {
+    padding: 3rem 1.5rem;
+    background: #fff;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.manageLink {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #737300;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+}
+
+.manageLink:hover {
+    opacity: 0.7;
+}
+
+.statusGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.statusCard {
+    background: linear-gradient(135deg, #b5b77c 0%, #767a15 100%);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 220px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Add a subtle leaf or curve pattern like in the image */
+.statusCard::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.cardContent {
+    position: relative;
+    z-index: 1;
+}
+
+.mainValue {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1;
+}
+
+.subLabel {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.25rem 0;
+    opacity: 0.9;
+}
+
+.metaText {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.checkCircle {
+    width: 60px;
+    height: 60px;
+    background: #737300; /* Darker olive for the check circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footerValue {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .statusGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        max-width: 95%;
+    }
+}

@@ -245,3 +245,103 @@
         padding: 3rem 2rem;
     }
 }
+
+/* OTP Specific Styles */
+.errorMessage {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+}
+
+.otpErrorMessage {
+    color: #dc2626;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.otpContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.otpTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.otpSubtitle {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.otpInputGroup {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.otpInput {
+    width: 50px;
+    height: 60px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: all 0.2s;
+}
+
+.otpInput:focus {
+    outline: none;
+    border-color: #8a8a00;
+    box-shadow: 0 0 0 4px rgba(138, 138, 0, 0.1);
+}
+
+.resendText {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.resendLink {
+    color: #8a8a00;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.timerText {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+.backToLogin {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #8a8a00;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.backToLogin:hover {
+    text-decoration: underline;
+}
