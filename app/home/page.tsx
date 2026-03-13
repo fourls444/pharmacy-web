@@ -6,6 +6,8 @@ import HomeStats from "@/components/home/HomeStats";
 import PharmacyCarousel from "@/components/home/PharmacyCarousel";
 import HomeEvents from "@/components/home/HomeEvents";
 import HomeNewsSection from "@/components/home/HomeNewsSection";
+import MemberBanner from "@/components/home/MemberBanner";
+import PublicOnlySection from "@/components/home/PublicOnlySection";
 import styles from "./home.module.css";
 import Image from "next/image";
 
@@ -163,32 +165,39 @@ export default async function Home() {
       {/* === Banner Carousel 16:9 === */}
       <BannerCarousel banners={activeBanners} slogan={settings.slogan} />
 
-      {/* === ค้นหารายชื่อ === */}
-      <section className={styles.searchSection}>
-        <div className={styles.searchContainer}>
-          <LicenseSearch />
-        </div>
-      </section>
+      {/* === Member Welcome Banner (visible only when logged in) === */}
+      <MemberBanner />
+
+      {/* === ค้นหารายชื่อ (public only) === */}
+      <PublicOnlySection>
+        <section className={styles.searchSection}>
+          <div className={styles.searchContainer}>
+            <LicenseSearch />
+          </div>
+        </section>
+      </PublicOnlySection>
 
 
-      {/* === บริการประชาชน === */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>บริการประชาชน</h2>
-            <Link href="/service" className={styles.viewAll}>ดูทั้งหมด →</Link>
+      {/* === บริการประชาชน (public only) === */}
+      <PublicOnlySection>
+        <section className={styles.serviceSection}>
+          <div className={styles.container}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>บริการประชาชน</h2>
+              <Link href="/service" className={styles.viewAll}>ดูทั้งหมด →</Link>
+            </div>
+            <div className={styles.publicGrid}>
+              {publicService.map((svc, i) => (
+                <Link key={i} href={svc.href} className={styles.publicCard}>
+                  <div className={styles.publicCardIcon}>{svc.icon}</div>
+                  <h3 className={styles.publicCardTitle}>{svc.title}</h3>
+                  <p className={styles.publicCardDesc}>{svc.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className={styles.publicGrid}>
-            {publicService.map((svc, i) => (
-              <Link key={i} href={svc.href} className={styles.publicCard}>
-                <div className={styles.publicCardIcon}>{svc.icon}</div>
-                <h3 className={styles.publicCardTitle}>{svc.title}</h3>
-                <p className={styles.publicCardDesc}>{svc.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </PublicOnlySection>
 
       {/* === บริการเภสัชกร === */}
       <section className={styles.serviceSection}>

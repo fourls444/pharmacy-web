@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Kanit } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import AppHeader from "@/components/AppHeader";
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +34,11 @@ export default function RootLayout({
   return (
     <html lang="th">
       <body className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} antialiased bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
-        <header className="sticky top-0 z-50">
-          <Navbar />
-        </header>
-       <main className="flex-grow bg-white">{children}</main>
-        <Footer />
+        <Providers>
+          <AppHeader />
+          <main className="flex-grow bg-white">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
