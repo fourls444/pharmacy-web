@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from "./Navbar.module.css";
 
@@ -20,6 +20,7 @@ const navLinks = [
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
     const [lang, setLang] = useState("TH");
 
     return (
@@ -71,10 +72,15 @@ export default function Navbar() {
                         </svg>
                     </div>
 
-                    {/* Login Button */}
-                    <button className={`${styles.loginBtn} ThaiFont`}>
-                        เข้าสู่ระบบเภสัชกร
-                    </button>
+                    {/* Login Button - Hide on login page */}
+                    {pathname !== "/login" && (
+                        <button 
+                            className={`${styles.loginBtn} ThaiFont`}
+                            onClick={() => router.push("/login")}
+                        >
+                            เข้าสู่ระบบเภสัชกร
+                        </button>
+                    )}
                 </div>
             </div>
 
