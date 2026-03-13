@@ -103,6 +103,7 @@ export default function HomeEvents() {
               {/* Event Image */}
               <div className={styles.eventImageWrapper}>
                 <Image
+                unoptimized={true}
                   src={event.image}
                   alt={event.title}
                   width={280}

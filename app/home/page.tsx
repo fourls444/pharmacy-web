@@ -237,10 +237,11 @@ export default async function Home() {
                 <div className={styles.roleCardImage}>
                   {/* เรียกใช้งานรูปจากโฟลเดอร์ public */}
                   <Image 
-                    src={role.image} 
+                    src={`${role.image}?v=${Date.now()}`} 
                     alt={role.title} 
                     width={400} 
                     height={250} 
+                    unoptimized={true}
                     style={{ objectFit: 'contain', width: '100%', height: 'auto' }} 
                   />
                 </div>
