@@ -3,6 +3,7 @@ import styles from "./contact.module.css";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { SiLine } from "react-icons/si";
 import { FiArrowUpRight } from "react-icons/fi";
+import { User, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 
 export default async function ContactPage() {
@@ -25,7 +26,6 @@ export default async function ContactPage() {
                     src={settings.googleMapsEmbed}
                     width="100%"
                     height="450"
-                    style={{ border: 0 }}
                     allowFullScreen={true}
                     loading="lazy"
                     title="Google Maps"
@@ -115,6 +115,59 @@ export default async function ContactPage() {
                 {/* Map Section */}
                 <div className={styles.mapSection}>
                     {renderMap()}
+                </div>
+
+                {/* Contact Form Section */}
+                <div className={styles.contactFormSection}>
+                    <div className={styles.formImageWrapper}>
+                        <Image
+                            src="/images/contact/Image2.png"
+                            alt="Contact Form"
+                            fill
+                            className={styles.formImage}
+                        />
+                    </div>
+                    <div className={styles.formContainer}>
+                        <h2 className={styles.formTitle}>แบบฟอร์มติดต่อสอบถาม</h2>
+                        <form className={styles.contactForm}>
+                            <div className={styles.inputGroup}>
+                                <User className={styles.inputIcon} size={18} />
+                                <input type="text" placeholder="ชื่อ - นามสกุล" className={styles.inputField} />
+                            </div>
+                            
+                            <div className={styles.formRow}>
+                                <div className={styles.inputGroup}>
+                                    <Phone className={styles.inputIcon} size={18} />
+                                    <input type="tel" placeholder="โทรศัพท์ติดต่อกลับ" className={styles.inputField} />
+                                </div>
+                                <div className={styles.inputGroup}>
+                                    <Mail className={styles.inputIcon} size={18} />
+                                    <input type="email" placeholder="อีเมลติดต่อกลับ" className={styles.inputField} />
+                                </div>
+                            </div>
+
+                            <div className={styles.inputGroup}>
+                                <input type="text" placeholder="หัวข้อที่ต้องการติดต่อ" className={styles.inputFieldNoIcon} />
+                            </div>
+
+                            <div className={styles.inputGroup}>
+                                <textarea placeholder="ข้อความ" className={styles.textareaField} rows={5}></textarea>
+                            </div>
+
+                            <div className={styles.captchaSection}>
+                                <div className={styles.captchaWrapper}>
+                                    <div className={styles.captchaBox}>
+                                        <span className={styles.captchaText}>W6 8HP</span>
+                                    </div>
+                                    <input type="text" placeholder="กรุณากรอกตัวอักษรตามรูปภาพ" className={styles.inputFieldNoIcon} />
+                                </div>
+                            </div>
+
+                            <button type="button" className={styles.submitBtn}>
+                                ส่งข้อความ
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

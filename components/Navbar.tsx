@@ -10,11 +10,11 @@ const navLinks = [
     { name: "หน้าแรก", href: "/" },
     { name: "เกี่ยวกับองค์กร", href: "/about" },
     { name: "หน่วยงาน", href: "/department", hasDropdown: true },
-    { name: "งานบริการ", href: "/services" },
+    { name: "งานบริการ", href: "/service" },
     { name: "งานประชุม", href: "/event" },
     { name: "ข่าวสาร", href: "/news" },
     { name: "กฎหมาย", href: "/laws" },
-    { name: "บริการอื่นๆ", href: "/other-services" },
+    { name: "บริการอื่นๆ", href: "/other-service" },
     { name: "ติดต่อ", href: "/contact" },
 ];
 
@@ -43,6 +43,14 @@ export default function Navbar() {
                             THE PHARMACY COUNCIL OF THAILAND
                         </p>
                     </div>
+                    {pathname === "/login" && (
+                        <>
+                            <div className={styles.navDivider}></div>
+                            <h2 className={`${styles.systemName} ThaiFont`}>
+                                ระบบบริการผู้ประกอบวิชาชีพเภสัชกรรม
+                            </h2>
+                        </>
+                    )}
                 </div>
 
                 <div className={styles.actionsArea}>
