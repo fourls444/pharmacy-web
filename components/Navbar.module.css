@@ -203,3 +203,26 @@
     background-color: #737300;
     border-radius: 4px 4px 0 0;
 }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .topBanner {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .brandArea {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .actionsArea {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .lowerNav {
+        padding: 0 1rem;
+    }
+}

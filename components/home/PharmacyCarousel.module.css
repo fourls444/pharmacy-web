@@ -227,8 +227,26 @@
   }
 
   .slideTitle { font-size: 1.4rem; }
-  .bottomSection { flex-direction: column; gap: 1.5rem; }
+  /* แสดงปุ่มในมือถือ แต่ย่อขนาดลง */
+  .navBtn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  } 
+
+  /* จัดเรียงให้ปุ่มอยู่ข้างข้อความ หรือด้านล่าง */
+  .bottomSection {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .card { width: 180px; height: 240px; }
+  .carouselTrack { height: 260px; }
+  .carouselWrapper { min-height: 280px; }
   
-  /* ขยับปุ่มมาเรียงคู่กันด้านล่างข้อความแทนในมือถือ */
-  .navBtn { display: none; /* หรือจัด Layout ใหม่สำหรับมือถือ */ } 
+  .cardLeft1 { transform: translateX(-50%) scale(0.85); }
+  .cardRight1 { transform: translateX(50%) scale(0.85); }
 }

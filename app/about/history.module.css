@@ -113,6 +113,19 @@
 }
 
 /* === Responsive === */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .imageWrapper {
+        width: 100%;
+        max-width: 100%;
+        min-height: 250px;
+    }
+}
+
 @media (max-width: 640px) {
     .contentImageRow {
         grid-template-columns: 1fr;

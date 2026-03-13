@@ -90,8 +90,8 @@
     max-width: 90%;
   }
 
-  .listGrid {
-    grid-template-columns: 1fr;
+  .listColumn {
+    flex: 1 1 100%;
   }
 
   .title {

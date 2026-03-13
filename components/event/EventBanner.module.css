@@ -5,3 +5,9 @@
     background-size: cover;
     background-position: left;
 }
+
+@media (max-width: 768px) {
+    .banner {
+        height: 250px;
+    }
+}

@@ -328,24 +328,49 @@
 }
 
 /* === Responsive for service grids === */
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
     .publicGrid,
     .pharmaGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .roleGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container, .searchContainer {
+        max-width: 95%;
+        padding: 0 1rem;
+    }
+
+    .roleGrid {
+        grid-template-columns: 1fr;
+    }
+
     .publicCard,
     .pharmaCard {
-        min-height: 150px;
+        min-height: 200px;
+    }
+
+    .roleTitleCard, 
+    .roleCard {
+        height: auto;
+        min-height: 250px;
     }
 }
 
 @media (max-width: 480px) {
-
     .publicGrid,
     .pharmaGrid {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .publicCardIcon svg,
+    .pharmaCardIcon {
+        width: 80px;
+        height: 80px;
     }
 }
