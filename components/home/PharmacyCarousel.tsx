@@ -108,6 +108,7 @@ export default function PharmacyCarousel() {
                       width={340}
                       height={420}
                       style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                      unoptimized={true}
                     />
                   </div>
                 </div>
