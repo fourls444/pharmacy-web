@@ -1,7 +1,8 @@
 import Link from "next/link";
-import styles from "./HomeSections.module.css";
+import styles from "../../home/HomeSections.module.css";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
+import MemberOnlySection from "./MemberOnlySection";
 
 interface ServiceItem {
   title: string;
@@ -55,30 +56,32 @@ const OTHER_SERVICES: ServiceItem[] = [
 
 export default function OtherServiceSection() {
     return (
-        <section className={styles.serviceSection}>
-            <Container>
-                <SectionHeader title="บริการอื่น ๆ" />
-                <div className={styles.otherServiceGrid}>
-                    {OTHER_SERVICES.map((svc, i) => (
-                        <Link key={i} href={svc.href} className={styles.otherServiceCard}>
-                            <div className={styles.otherServiceIconWrapper}>
-                                <div className={styles.otherServiceCircle}>
-                                    {svc.icon}
+        <MemberOnlySection>
+            <section className={styles.serviceSection}>
+                <Container>
+                    <SectionHeader title="บริการอื่น ๆ" />
+                    <div className={styles.otherServiceGrid}>
+                        {OTHER_SERVICES.map((svc, i) => (
+                            <Link key={i} href={svc.href} className={styles.otherServiceCard}>
+                                <div className={styles.otherServiceIconWrapper}>
+                                    <div className={styles.otherServiceCircle}>
+                                        {svc.icon}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className={styles.otherServiceContent}>
-                                <h3 className={styles.otherServiceTitle}>{svc.title}</h3>
-                                <p className={styles.otherServiceDesc}>{svc.desc}</p>
-                            </div>
-                            <div className={styles.otherServiceArrow}>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
-                                </svg>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </Container>
-        </section>
+                                <div className={styles.otherServiceContent}>
+                                    <h3 className={styles.otherServiceTitle}>{svc.title}</h3>
+                                    <p className={styles.otherServiceDesc}>{svc.desc}</p>
+                                </div>
+                                <div className={styles.otherServiceArrow}>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                    </svg>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+        </MemberOnlySection>
     );
 }

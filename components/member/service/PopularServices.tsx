@@ -1,5 +1,3 @@
-
-
 import styles from "./PopularServices.module.css";
 
 const popularServices = [
@@ -56,7 +54,7 @@ const popularServices = [
 export default function PopularServices() {
   return (
     <section className={styles.section}>
-      <h2 className="ThaiFont">บริการเภสัชกรยอดนิยม</h2>
+      <h2 className="ThaiFont">บริการยอดนิยม</h2>
       <div className={styles.popularGrid}>
         {popularServices.map((service) => (
           <div key={service.id} className={styles.popularCard}>

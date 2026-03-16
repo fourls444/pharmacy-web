@@ -1,3 +1,6 @@
+"use client";
+
+import { useAuth } from "@/context/AuthContext";
 import styles from "./PublicServices.module.css";
 
 const publicServices = [
@@ -10,6 +13,10 @@ const publicServices = [
 ];
 
 export default function PublicServices() {
+  const { isLoggedIn } = useAuth();
+
+  if (isLoggedIn) return null;
+
   return (
     <section className={styles.section}>
       <h2 className="ThaiFont">บริการประชาชน</h2>
