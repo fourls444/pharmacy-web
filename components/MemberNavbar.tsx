@@ -71,7 +71,7 @@ export default function MemberNavbar() {
                         </div>
                         <div className={styles.avatarWrapper}>
                           <Image
-                              src="/images/home/member/image 110.png"
+                              src="/images/member/image.png"
                               alt="Avatar"
                               width={40}
                               height={40}
@@ -82,6 +82,7 @@ export default function MemberNavbar() {
                           </button>
                         </div>
                     </div>
+
                 </div>
             </div>
 
