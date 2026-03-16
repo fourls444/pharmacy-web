@@ -201,27 +201,34 @@ export default function LoginPage() {
                   </div>
                 </div>
 
-                <div className={styles.otpInputGroup}>
-                  {otp.map((digit, i) => (
-                    <input
-                      key={i}
-                      id={`otp-${i}`}
-                      type="text"
-                      maxLength={1}
-                      className={styles.otpInput}
-                      value={digit}
-                      onChange={(e) => handleOtpChange(i, e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(i, e)}
-                      autoComplete="off"
-                    />
-                  ))}
-                </div>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleVerifyOtp();
+                  }}
+                >
+                  <div className={styles.otpInputGroup}>
+                    {otp.map((digit, i) => (
+                      <input
+                        key={i}
+                        id={`otp-${i}`}
+                        type="text"
+                        maxLength={1}
+                        className={styles.otpInput}
+                        value={digit}
+                        onChange={(e) => handleOtpChange(i, e.target.value)}
+                        onKeyDown={(e) => handleKeyDown(i, e)}
+                        autoComplete="off"
+                      />
+                    ))}
+                  </div>
 
-                {otpError && <p className={styles.otpErrorMessage}>{otpError}</p>}
+                  {otpError && <p className={styles.otpErrorMessage}>{otpError}</p>}
 
-                <button type="button" className={styles.submitBtn} onClick={handleVerifyOtp}>
-                  ยืนยัน OTP
-                </button>
+                  <button type="submit" className={styles.submitBtn}>
+                    ยืนยัน OTP
+                  </button>
+                </form>
 
                 <p className={styles.resendText}>
                   ยังไม่ได้รับรหัส? <span className={styles.resendLink}>ส่งรหัสอีกครั้ง</span>
