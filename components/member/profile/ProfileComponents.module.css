@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    color: #666;
+    color: #686805;
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.2s;
@@ -74,10 +74,11 @@
 }
 
 .profileCard {
-    background: white;
+    background:
+    #fcfcfc;
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    padding: 2.5rem;
+    padding: 1.5rem;
     display: flex;
     gap: 3rem;
     position: relative;
@@ -129,18 +130,36 @@
     align-items: center;
 }
 
+/* === คลาสป้ายสถานะ (อัปเดตใหม่) === */
 .statusBadge {
+    position: absolute; /* 🔴 ทำให้ป้ายลอยขึ้นมาเป็นอิสระ */
+    top: -15px; /* 🔴 ดันให้ป้ายล้นขอบบนขึ้นไป 15px */
+    right: 3rem; /* 🔴 ระยะห่างจากขอบขวา (ปรับตัวเลขได้ตามต้องการ) */
+    
     background: linear-gradient(135deg, #a3a34d 0%, #737300 100%);
     color: white;
     padding: 1.75rem 2.25rem;
-    border-radius: 20px;
+    
+    /* 🔴 เปลี่ยนความโค้ง: ให้มุมซ้ายบนเป็น 0 (มุมฉาก) เพื่อเชื่อมกับรอยพับพอดี */
+    border-radius: 0 20px 20px 20px; 
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-width: 180px;
     box-shadow: 0 8px 24px rgba(115, 115, 0, 0.25);
-    position: relative;
+    z-index: 10;
+}
+
+/* 🔴 วาดรอยพับเงาสามเหลี่ยมตรงมุมซ้ายบน */
+.statusBadge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px; /* ล้นไปทางซ้ายเท่ากับขนาดความกว้างสามเหลี่ยม */
+    border-top: 15px solid transparent; /* สีเขียวมะกอกเข้ม (ทำหน้าที่เป็นเงารอยพับ) */
+    border-right: 10px solid #5c621d; /* ตัดขอบให้เฉียง */
 }
 
 .statusValue {
@@ -166,7 +185,7 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    color: #888;
+    color: #686805;
     font-size: 1rem;
     text-decoration: none;
     transition: all 0.2s;
@@ -183,26 +202,33 @@
     gap: 1.5rem;
 }
 
+/* === การ์ดหน่วยกิต === */
 .creditCard {
-    background: linear-gradient(135deg, #f0f0d8 0%, #e8e8c8 100%);
+    /* 🔴 ซ้อน Gradient 3 ชั้นเพื่อสร้างแสงเงาตกกระทบ */
+    background: 
+        /* ชั้นที่ 1: แสงสะท้อนสีขาวโค้งๆ มุมขวาบน (ปรับเปอร์เซ็นต์ความโค้งได้ที่นี่) */
+        radial-gradient(ellipse 150% 120% at 100% -20%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 35%, rgba(255, 255, 255, 0) 36%),
+        
+        /* ชั้นที่ 2: เงาโค้งมืดๆ ด้านล่างนิดหน่อยเพิ่มมิติ (Optional) */
+        radial-gradient(ellipse 150% 100% at 50% 120%, rgba(216, 213, 169, 0.4) 0%, rgba(242, 241, 228, 0) 40%),
+
+        /* ชั้นที่ 3: สีพื้นหลังหลัก (ไล่จากเขียวมะกอกอ่อนไปครีม) */
+        linear-gradient(135deg, #dfddb8 0%, #e8e7cb 40%, #f4f3e6 100%);
+        
     border-radius: 24px;
     padding: 2.5rem;
     position: relative;
     overflow: hidden;
-    border: 1px solid #eeeeee;
+    border: 1px solid #f0efdd; /* สีขอบให้กลืนกับพื้นหลัง */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* เพิ่มเงาบางๆ ให้ลอยขึ้น */
+    
+    /* เพิ่ม transition เผื่ออยากทำ hover effect ในอนาคต */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.creditCard::after {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    z-index: 0;
-}
+
+
+
 
 .creditValue {
     position: relative;
@@ -357,8 +383,8 @@
     left: 16px;
     background: #ef4444;
     color: white;
-    padding: 6px 14px;
-    border-radius: 10px;
+    padding: 3px 10px;
+    border-radius: 99px;
     font-size: 0.85rem;
     font-weight: 600;
     z-index: 1;
@@ -457,6 +483,7 @@
     .coursesGrid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
 }
 
 @media (max-width: 640px) {

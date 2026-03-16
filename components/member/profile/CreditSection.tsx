@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import styles from "./ProfileComponents.module.css";
+
+// 🔴 เอาบรรทัด Import SVG ออกไปได้เลย
+
 interface CreditItem {
   value: string;
   label: string;
@@ -32,6 +35,8 @@ export default function CreditSection() {
             <div className={styles.creditsGrid}>
                 {CREDIT_DATA.map((item, index) => (
                     <div key={index} className={styles.creditCard}>
+                        
+                        {/* โค้ดรูปภาพหายไปแล้ว! เหลือแค่เนื้อหาเน้นๆ */}
                         <div className={styles.creditValue}>{item.value}</div>
                         <div className={styles.creditLabel}>{item.label}</div>
                         <div className={styles.progressContainer}>
@@ -42,6 +47,7 @@ export default function CreditSection() {
                                 ></div>
                             </div>
                         </div>
+                        
                     </div>
                 ))}
             </div>
