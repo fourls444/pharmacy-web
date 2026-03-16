@@ -6,10 +6,7 @@
     padding-top: 3rem;
 }
 
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
+.footerInner {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
@@ -18,7 +15,7 @@
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .footerInner {
         grid-template-columns: 1fr;
         gap: 2rem;
     }

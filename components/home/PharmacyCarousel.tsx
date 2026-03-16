@@ -3,6 +3,8 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import styles from "./PharmacyCarousel.module.css";
+import DotPagination from "@/components/ui/DotPagination";
+import Container from "@/components/ui/Container";
 
 interface SlideData {
   title: string;
@@ -39,7 +41,7 @@ const slides: SlideData[] = [
   {
     title: "เภสัชกรวิจัยและพัฒนา",
     desc: "วิจัยและพัฒนายาใหม่ ทดสอบทางคลินิก\nเพื่อสร้างนวัตกรรมทางเภสัชกรรม",
-    image: "/images/home/image1.png", /* เปลี่ยนรูปให้ตรงตามต้องการได้เลยครับ */
+    image: "/images/home/image1.png",
   },
 ];
 
@@ -77,7 +79,7 @@ export default function PharmacyCarousel() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.sectionInner}>
+      <Container className={styles.sectionInner}>
         {/* Header */}
         <h2 className={styles.sectionTitle}>6 สาขาวิชาชีพเภสัชกร</h2>
         <p className={styles.sectionSubtitle}>
@@ -89,7 +91,6 @@ export default function PharmacyCarousel() {
           <div className={styles.carouselTrack}>
             {slides.map((slide, i) => {
               let offset = i - activeIndex;
-              // Wrap around
               if (offset > slides.length / 2) offset -= slides.length;
               if (offset < -slides.length / 2) offset += slides.length;
 
@@ -117,7 +118,7 @@ export default function PharmacyCarousel() {
           </div>
         </div>
 
-        {/* 🔴 ส่วนที่ปรับปรุงใหม่: นำปุ่มลูกศรมาขนาบข้างข้อความ */}
+        {/* Controls Section */}
         <div className={styles.bottomSection}>
           <button
             className={styles.navBtn}
@@ -145,18 +146,13 @@ export default function PharmacyCarousel() {
           </button>
         </div>
 
-        {/* Dots */}
-        <div className={styles.dots}>
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ""}`}
-              onClick={() => goTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
+        {/* Standard Pagination Dots */}
+        <DotPagination 
+            total={slides.length} 
+            active={activeIndex} 
+            onClick={goTo} 
+        />
+      </Container>
     </section>
   );
 }

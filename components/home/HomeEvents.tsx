@@ -1,7 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import { MapPin, Calendar, Users, Building2 } from "lucide-react";
 import styles from "./HomeEvents.module.css";
+import Container from "@/components/ui/Container";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Badge from "@/components/ui/Badge";
 
 const MOCK_EVENTS = [
   {
@@ -14,7 +16,7 @@ const MOCK_EVENTS = [
     audiences: ["บุคคลทั่วไป", "เภสัชกร"],
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image1.png", // Mock image path
+    image: "/images/home/image1.png",
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ const MOCK_EVENTS = [
     audiences: ["เภสัชกร"],
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image2.png", // Mock image path
+    image: "/images/home/image2.png",
   },
   {
     id: 3,
@@ -38,24 +40,15 @@ const MOCK_EVENTS = [
     audiences: ["บุคคลทั่วไป"],
     capacity: "เต็ม",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image3.png", // Mock image path
+    image: "/images/home/image3.png",
   },
 ];
 
 export default function HomeEvents() {
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>การประชุม</h2>
-          <Link href="/event" className={styles.viewAll}>
-            ดูทั้งหมด
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
+      <Container>
+        <SectionHeader title="การประชุม" viewAllHref="/event" />
 
         <div className={styles.eventList}>
           {MOCK_EVENTS.map((event) => (
@@ -78,16 +71,16 @@ export default function HomeEvents() {
                     <div className={styles.detailIcon}><Calendar size={16} /></div>
                     <span>วันที่จัดประชุม : {event.dateRange}</span>
                   </div>
-                  <div className={styles.detailRow} style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-                    <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+                  <div className={styles.detailRowFlex}>
+                    <div className={styles.audiencesWrapper}>
                       <div className={styles.detailIcon}><Users size={16} /></div>
-                      <span style={{ marginRight: "0.5rem" }}>ผู้เข้าร่วม :</span>
+                      <span className={styles.participantLabel}>ผู้เข้าร่วม :</span>
                       <div className={styles.badges}>
                         {event.audiences.includes("บุคคลทั่วไป") && (
-                          <span className={styles.badge}>บุคคลทั่วไป</span>
+                          <Badge>บุคคลทั่วไป</Badge>
                         )}
                         {event.audiences.includes("เภสัชกร") && (
-                          <span className={`${styles.badge} ${styles.badgeActive}`}>เภสัชกร</span>
+                          <Badge active>เภสัชกร</Badge>
                         )}
                       </div>
                     </div>
@@ -103,7 +96,7 @@ export default function HomeEvents() {
               {/* Event Image */}
               <div className={styles.eventImageWrapper}>
                 <Image
-                unoptimized={true}
+                  unoptimized={true}
                   src={event.image}
                   alt={event.title}
                   width={280}
@@ -114,7 +107,7 @@ export default function HomeEvents() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
