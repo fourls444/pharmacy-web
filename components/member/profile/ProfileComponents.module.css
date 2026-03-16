@@ -239,6 +239,8 @@
     height: 100%;
     background: #737300;
     border-radius: 10px;
+    width: var(--progress-width, 0%);
+    transition: width 1s ease-in-out;
 }
 
 /* Carousel General */
@@ -478,4 +480,8 @@
     .creditValue {
         font-size: 2.25rem;
     }
+}
+
+.rotate180 {
+    transform: rotate(180deg);
 }

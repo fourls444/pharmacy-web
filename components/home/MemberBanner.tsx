@@ -21,40 +21,34 @@ export default function MemberBanner() {
         </div>
 
         <div className={styles.statusGrid}>
-          {/* Card 1: CPE Units */}
-          <div className={styles.statusCard}>
-            <div className={styles.cardContent}>
-              <h3 className={styles.mainValue}>10/10</h3>
-              <p className={styles.subLabel}>หน่วยกิตประจำปี 2569</p>
-              <p className={styles.metaText}>รอบที่ 2 ปี 2568 - 2573</p>
+          {[
+            {
+              main: "10/10",
+              sub: "หน่วยกิตประจำปี 2569",
+              meta: "รอบที่ 2 ปี 2568 - 2573",
+              footer: "25/100",
+            },
+            {
+              main: "ปกติ",
+              sub: "ใบประกอบวิชาชีพหมดอายุ 04/70",
+            },
+            {
+              main: "สำเร็จ",
+              sub: "อัปเดตข้อมูลประจำปี 2569",
+            },
+          ].map((status, i) => (
+            <div key={i} className={styles.statusCard}>
+              <div className={styles.cardContent}>
+                <h3 className={styles.mainValue}>{status.main}</h3>
+                <p className={styles.subLabel}>{status.sub}</p>
+                {status.meta && <p className={styles.metaText}>{status.meta}</p>}
+              </div>
+              <div className={styles.checkCircle}>
+                <Check size={24} color="white" strokeWidth={3} />
+              </div>
+              {status.footer && <span className={styles.footerValue}>{status.footer}</span>}
             </div>
-            <div className={styles.checkCircle}>
-              <Check size={24} color="white" strokeWidth={3} />
-            </div>
-            <span className={styles.footerValue}>25/100</span>
-          </div>
-
-          {/* Card 2: License Status */}
-          <div className={styles.statusCard}>
-            <div className={styles.cardContent}>
-              <h3 className={styles.mainValue}>ปกติ</h3>
-              <p className={styles.subLabel}>ใบประกอบวิชาชีพหมดอายุ 04/70</p>
-            </div>
-            <div className={styles.checkCircle}>
-              <Check size={24} color="white" strokeWidth={3} />
-            </div>
-          </div>
-
-          {/* Card 3: Profile Update */}
-          <div className={styles.statusCard}>
-            <div className={styles.cardContent}>
-              <h3 className={styles.mainValue}>สำเร็จ</h3>
-              <p className={styles.subLabel}>อัปเดตข้อมูลประจำปี 2569</p>
-            </div>
-            <div className={styles.checkCircle}>
-              <Check size={24} color="white" strokeWidth={3} />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,63 +1,78 @@
 import Image from "next/image";
-import { ChevronRight } from "lucide-react";
 import styles from "./ProfileComponents.module.css";
+import SectionHeader from "@/components/ui/SectionHeader";
+import CarouselButtons from "@/components/ui/CarouselButtons";
+import DotPagination from "@/components/ui/DotPagination";
+
+interface CourseItem {
+  id: string;
+  title: string;
+  credits: string;
+  expiryDate: string;
+  image: string;
+  isExpiringSoon?: boolean;
+}
+
+const COURSE_DATA: CourseItem[] = [
+  {
+    id: "1",
+    title: "CPAT210 การวิเคราะห์และพยากรณ์ความต้องการ และการวางแผนกำลังคนเภสัชกร",
+    credits: "3 หน่วยกิต",
+    expiryDate: "20/04/2569",
+    image: "/images/home/image1.png",
+    isExpiringSoon: true,
+  },
+  {
+    id: "2",
+    title: "Pharmacy Transformation: ปรับโมเดลร้านยาและระบบคลังสินค้าสู่ยุคดิจิทัล",
+    credits: "1.5 หน่วยกิต",
+    expiryDate: "01/08/2569",
+    image: "/images/home/image4.png",
+  },
+  {
+    id: "3",
+    title: "Clinical Practice Update: เจาะลึกแนวทางการจ่ายยาและอุบัติใหม่ประจำปี 2026",
+    credits: "3 หน่วยกิต",
+    expiryDate: "22/11/2569",
+    image: "/images/home/image5.png",
+  },
+];
 
 export default function CourseSection() {
     return (
         <div className={styles.sectionSpacer}>
-            <div className={styles.carouselHeader}>
-                <h2 className={styles.sectionTitle}>คอร์สเรียนของฉัน</h2>
-                <div className={styles.navButtons}>
-                    <button className={styles.navBtn} aria-label="Previous"><ChevronRight size={18} style={{ transform: 'rotate(180deg)' }} /></button>
-                    <button className={styles.navBtn} aria-label="Next"><ChevronRight size={18} /></button>
-                </div>
-            </div>
+            <SectionHeader title="คอร์สเรียนของฉัน">
+                <CarouselButtons 
+                    onPrev={() => console.log('prev')} 
+                    onNext={() => console.log('next')} 
+                />
+            </SectionHeader>
+
             <div className={styles.coursesGrid}>
-                <div className={styles.courseCard}>
-                    <div className={styles.courseThumbWrapper}>
-                        <Image src="/images/home/image1.png" alt="Course" fill className={styles.courseThumb} />
-                        <div className={styles.expiryBadge}>ใกล้หมดอายุ</div>
-                    </div>
-                    <div className={styles.courseInfo}>
-                        <h3 className={styles.courseTitle}>CPAT210 การวิเคราะห์และพยากรณ์ความต้องการ และการวางแผนกำลังคนเภสัชกร</h3>
-                        <div className={styles.courseMeta}>
-                            <span className={styles.metaItem}>3 หน่วยกิต</span>
-                            <span className={styles.metaSubRed}>หมดอายุ 20/04/2569</span>
+                {COURSE_DATA.map((course) => (
+                    <div key={course.id} className={styles.courseCard}>
+                        <div className={styles.courseThumbWrapper}>
+                            <Image src={course.image} alt={course.title} fill className={styles.courseThumb} />
+                            {course.isExpiringSoon && <div className={styles.expiryBadge}>ใกล้หมดอายุ</div>}
+                        </div>
+                        <div className={styles.courseInfo}>
+                            <h3 className={styles.courseTitle}>{course.title}</h3>
+                            <div className={styles.courseMeta}>
+                                <span className={styles.metaItem}>{course.credits}</span>
+                                <span className={course.isExpiringSoon ? styles.metaSubRed : styles.metaSub}>
+                                    หมดอายุ {course.expiryDate}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.courseCard}>
-                    <div className={styles.courseThumbWrapper}>
-                        <Image src="/images/home/image4.png" alt="Course" fill className={styles.courseThumb} />
-                    </div>
-                    <div className={styles.courseInfo}>
-                        <h3 className={styles.courseTitle}>Pharmacy Transformation: ปรับโมเดลร้านยาและระบบคลังสินค้าสู่ยุคดิจิทัล</h3>
-                        <div className={styles.courseMeta}>
-                            <span className={styles.metaItem}>1.5 หน่วยกิต</span>
-                            <span className={styles.metaSub}>หมดอายุ 01/08/2569</span>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.courseCard}>
-                    <div className={styles.courseThumbWrapper}>
-                        <Image src="/images/home/image5.png" alt="Course" fill className={styles.courseThumb} />
-                    </div>
-                    <div className={styles.courseInfo}>
-                        <h3 className={styles.courseTitle}>Clinical Practice Update: เจาะลึกแนวทางการจ่ายยาและอุบัติใหม่ประจำปี 2026</h3>
-                        <div className={styles.courseMeta}>
-                            <span className={styles.metaItem}>3 หน่วยกิต</span>
-                            <span className={styles.metaSub}>หมดอายุ 22/11/2569</span>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
-            <div className={styles.paginationDots}>
-                <div className={styles.activeDot}></div>
-                <div className={styles.dot}></div>
-                <div className={styles.dot}></div>
-                <div className={styles.dot}></div>
-                <div className={styles.dot}></div>
-            </div>
+            
+            <DotPagination 
+                total={5} 
+                active={0} 
+                onClick={(i) => console.log(i)} 
+            />
         </div>
     );
 }

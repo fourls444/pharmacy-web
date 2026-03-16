@@ -1,6 +1,24 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import styles from "./ProfileComponents.module.css";
+interface CreditItem {
+  value: string;
+  label: string;
+  percent: number;
+}
+
+const CREDIT_DATA: CreditItem[] = [
+  {
+    value: "5/10",
+    label: "หน่วยกิตประจำปี 2569",
+    percent: 50,
+  },
+  {
+    value: "25/100",
+    label: "รอบที่ 2 ปี 2568 - 2573",
+    percent: 25,
+  },
+];
 
 export default function CreditSection() {
     return (
@@ -12,24 +30,20 @@ export default function CreditSection() {
                 </Link>
             </div>
             <div className={styles.creditsGrid}>
-                <div className={styles.creditCard}>
-                    <div className={styles.creditValue}>5/10</div>
-                    <div className={styles.creditLabel}>หน่วยกิตประจำปี 2569</div>
-                    <div className={styles.progressContainer}>
-                        <div className={styles.progressOuter}>
-                            <div className={styles.progressInner} style={{ width: '50%' }}></div>
+                {CREDIT_DATA.map((item, index) => (
+                    <div key={index} className={styles.creditCard}>
+                        <div className={styles.creditValue}>{item.value}</div>
+                        <div className={styles.creditLabel}>{item.label}</div>
+                        <div className={styles.progressContainer}>
+                            <div className={styles.progressOuter}>
+                                <div 
+                                    className={styles.progressInner} 
+                                    style={{ '--progress-width': `${item.percent}%` } as React.CSSProperties}
+                                ></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.creditCard}>
-                    <div className={styles.creditValue}>25/100</div>
-                    <div className={styles.creditLabel}>รอบที่ 2 ปี 2568 - 2573</div>
-                    <div className={styles.progressContainer}>
-                        <div className={styles.progressOuter}>
-                            <div className={styles.progressInner} style={{ width: '25%' }}></div>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );

@@ -30,26 +30,18 @@ export default function PharmacistInfoCard({ userName, userId }: PharmacistInfoC
                 </div>
 
                 <div className={styles.infoSection}>
-                    <div className={styles.infoRow}>
-                        <span className={styles.infoLabel}>ชื่อ-นามสกุล</span>
-                        <span className={styles.infoValue}>{userName}</span>
-                    </div>
-                    <div className={styles.infoRow}>
-                        <span className={styles.infoLabel}>เลขใบอนุญาตประกอบวิชาชีพ</span>
-                        <span className={styles.infoValue}>{userId}</span>
-                    </div>
-                    <div className={styles.infoRow}>
-                        <span className={styles.infoLabel}>ใบประกอบวิชาชีพหมดอายุ</span>
-                        <span className={styles.infoValue}>04/70</span>
-                    </div>
-                    <div className={styles.infoRow}>
-                        <span className={styles.infoLabel}>สถานะวันหมดอายุ</span>
-                        <span className={styles.infoValue}>ยังไม่ถึงกำหนดต่ออายุ</span>
-                    </div>
-                    <div className={styles.infoRow}>
-                        <span className={styles.infoLabel}>สถานที่ปฏิบัติงาน</span>
-                        <span className={styles.infoValue}>สภาเภสัชกรรม กระทรวงสาธารณสุข</span>
-                    </div>
+                    {[
+                        { label: "ชื่อ-นามสกุล", value: userName },
+                        { label: "เลขใบอนุญาตประกอบวิชาชีพ", value: userId },
+                        { label: "ใบประกอบวิชาชีพหมดอายุ", value: "04/70" },
+                        { label: "สถานะวันหมดอายุ", value: "ยังไม่ถึงกำหนดต่ออายุ" },
+                        { label: "สถานที่ปฏิบัติงาน", value: "สภาเภสัชกรรม กระทรวงสาธารณสุข" },
+                    ].map((item, index) => (
+                        <div key={index} className={styles.infoRow}>
+                            <span className={styles.infoLabel}>{item.label}</span>
+                            <span className={styles.infoValue}>{item.value}</span>
+                        </div>
+                    ))}
                 </div>
 
                 <div className={styles.statusWrapper}>
