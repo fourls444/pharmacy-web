@@ -61,7 +61,7 @@ export default function PopularServices() {
             <div className={styles.iconCircle}>
               <img src={service.icon} alt={`icon-${service.id}`} />
             </div>
-            <h3 className="ThaiFont">{service.title}</h3>
+            <h3 className="ThaiFont" style={{ fontSize:36}}>{service.title}</h3>
             <p className="ThaiFont">{service.desc}</p>
           </div>
         ))}

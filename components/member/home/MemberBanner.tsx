@@ -23,6 +23,11 @@ export default function MemberBanner() {
         <div className={styles.statusGrid}>
           {/* Card 1: CPE Units */}
           <div className={styles.statusCard}>
+            <img
+              className={styles.oliveImage}
+              alt="Olive"
+              src="/images/home/olive.png"
+            />
             <div className={styles.cardContent}>
               <h3 className={styles.mainValue}>10/10</h3>
               <p className={styles.subLabel}>หน่วยกิตประจำปี 2569</p>
@@ -36,7 +41,13 @@ export default function MemberBanner() {
 
           {/* Card 2: License Status */}
           <div className={styles.statusCard}>
+            <img
+              className={styles.oliveImage}
+              alt="Olive"
+              src="/images/home/olive.png"
+            />
             <div className={styles.cardContent}>
+              
               <h3 className={styles.mainValue}>ปกติ</h3>
               <p className={styles.subLabel}>ใบประกอบวิชาชีพหมดอายุ 04/70</p>
             </div>
@@ -47,6 +58,11 @@ export default function MemberBanner() {
 
           {/* Card 3: Profile Update */}
           <div className={styles.statusCard}>
+            <img
+              className={styles.oliveImage}
+              alt="Olive"
+              src="/images/home/olive.png"
+            />
             <div className={styles.cardContent}>
               <h3 className={styles.mainValue}>สำเร็จ</h3>
               <p className={styles.subLabel}>อัปเดตข้อมูลประจำปี 2569</p>
