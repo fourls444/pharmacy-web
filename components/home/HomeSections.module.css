@@ -103,17 +103,18 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    width: 100%;
+    align-items: start;
+    margin-top: 40px;
 }
 
 .pharmaCard {
     background: #ffffff;
     border-radius: 20px;
-    padding: 32px 24px 24px 24px;
+    padding: 32px;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: all 0.3s ease;
-    min-height: 240px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -129,8 +130,8 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    width: 65px;
-    height: 65px;
+    width: 83px;
+    height: 83px;
     border-radius: 50%;
     background: linear-gradient(219deg, rgba(242, 241, 228, 1) 0%, rgba(205, 202, 165, 1) 100%);
     display: flex;
@@ -152,23 +153,18 @@
 }
 
 .pharmaCardTitle {
-    font-size: 36px;
+    color: #797a2e;
+    font-size: 26px;
     font-weight: 700;
-    color: #737300;
-    margin-top: auto;
     margin-bottom: 12px;
-    line-height: 1.25;
-    white-space: pre-line;
-    padding-right: 20px; /* Prevent text from overlapping the icon if it gets too long */
+    line-height: 1.1;
 }
 
 .pharmaCardDesc {
-    font-size: 16px;
-    font-weight: 600;
-    color: #4b5563;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.4;
     margin: 0;
-    line-height: 1.5;
-    white-space: pre-line;
 }
 
 /* ============ บทบาทหน้าที่หลัก ============ */
