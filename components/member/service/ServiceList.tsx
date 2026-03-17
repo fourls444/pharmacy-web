@@ -1,36 +1,52 @@
 import styles from "./ServiceList.module.css";
 
-const serviceData = [
-  { label: "สภ.12", desc: "คำขอสมัครเป็นสมาชิกสภาเภสัชกรรม" },
-  { label: "สภ.17", desc: "คำขอขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.17/1", desc: "คำขอต่ออายุใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.19", desc: "คำขอหนังสือรับรองการขึ้นทะเบียนเป็นผู้ประกอบวิชาชีพเภสัชกรรม (ฉบับภาษาอังกฤษ)" },
-  { label: "สภ.21", desc: "คำขอใบแทนใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.22", desc: "คำขอเปลี่ยนชื่อ สกุล เพิ่มยศ อากิโรย" },
-  { label: "สภ.23", desc: "คำขอใบแปลใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.27", desc: "คำขอสมัครเป็นสมาชิกสภาเภสัชกรรม" },
-  { label: "สภ.28", desc: "คำขอขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.33", desc: "คำขอต่ออายุใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.34/1", desc: "คำขอหนังสือรับรองการขึ้นทะเบียนเป็นผู้ประกอบวิชาชีพเภสัชกรรม (ฉบับภาษาอังกฤษ)" },
-  { label: "สภ.46", desc: "คำขอใบแทนใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "สภ.78", desc: "คำขอเปลี่ยนชื่อ สกุล เพิ่มยศ อากิโรย" },
-  { label: "สภ.79", desc: "คำขอใบแปลใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม" },
-  { label: "แจ้งลา", desc: "แจ้งหลักฐานการลา" },
-  { label: "วุฒิบัตร", desc: "คำขอหนังสืออนุมัติหรือวุฒิบัตรแสดงความรู้ความชำนาญในการประกอบวิชาชีพเภสัชกรรม" },
-  { label: "หน่วยกิต", desc: "คำขอเก็บหน่วยกิตการศึกษาต่อเนื่องเพิ่มเติม (โอนย้าย หน่วยกิต ในรอบการศึกษา 5 ปี)" },
-];
+import Link from "next/link";
+import { ServiceItem } from "@/lib/api";
 
-export default function ServiceList() {
+interface ServiceListProps {
+  services: ServiceItem[];
+}
+
+export default function ServiceList({ services }: ServiceListProps) {
+  if (!services || services.length === 0) return null;
+
   return (
     <section className={styles.section}>
       <h2 className="ThaiFont">บริการเภสัชกร</h2>
       <div className={styles.serviceListGrid}>
-        {serviceData.map((item, index) => (
-          <div key={index} className={styles.serviceListItem}>
-            <div className={`${styles.serviceLabel} ThaiFont`}>{item.label}</div>
-            <div className={`${styles.serviceDesc} ThaiFont`}>{item.desc}</div>
-          </div>
-        ))}
+        {services.map((item) => {
+          const content = (
+            <>
+              <div className={`${styles.serviceLabel} ThaiFont`}>
+                {item.shortName || item.name}
+              </div>
+              <div className={`${styles.serviceDesc} ThaiFont`}>
+                {item.shortName ? `${item.name}${item.description ? ` - ${item.description}` : ''}` : item.description || "-"}
+              </div>
+            </>
+          );
+
+          if (item.linkUrl) {
+            return (
+              <Link 
+                key={item.id} 
+                href={item.linkUrl}
+                className={styles.serviceListItem}
+                target={item.linkUrl.startsWith('http') ? "_blank" : "_self"}
+                rel={item.linkUrl.startsWith('http') ? "noopener noreferrer" : undefined}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                {content}
+              </Link>
+            );
+          }
+
+          return (
+            <div key={item.id} className={styles.serviceListItem}>
+              {content}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

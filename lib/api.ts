@@ -221,3 +221,62 @@ export async function getLawsByCategory(category: string): Promise<LawItem[]> {
     }
 }
 
+// ===== Services =====
+
+export interface ServiceItem {
+    id: number;
+    name: string;
+    shortName: string | null;
+    iconUrl: string | null;
+    order: number;
+    description: string | null;
+    linkUrl: string | null;
+    isPopular: boolean;
+    popularOrder: number;
+    createdAt: string;
+}
+
+export async function getServices(): Promise<ServiceItem[]> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return [];
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/services`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch services: ${res.statusText}`);
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error('Error fetching services:', error);
+        return [];
+    }
+}
+
+export async function getPopularServices(): Promise<ServiceItem[]> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return [];
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/services/popular`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch popular services: ${res.statusText}`);
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error('Error fetching popular services:', error);
+        return [];
+    }
+}
+

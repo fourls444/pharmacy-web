@@ -12,16 +12,17 @@ import PharmacistRolesSection from "@/components/home/PharmacistRolesSection";
 import OtherServiceSection from "@/components/member/home/OtherServiceSection";
 import HomeNewsSection from "@/components/home/HomeNewsSection";
 import MemberHighlightSection from "@/components/member/home/MemberHighlightSection";
-import { getHomeContent, getWebSettings, getNews } from "@/lib/api";
+import { getHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
 import styles from "./home.module.css";
 
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const [homeContent, settings, allNews] = await Promise.all([
+  const [homeContent, settings, allNews, popularServices] = await Promise.all([
     getHomeContent(),
     getWebSettings(),
     getNews(),
+    getPopularServices(),
   ]);
 
   const highlights = allNews.filter(n => n.isHighlight && n.status === 'published');
@@ -44,7 +45,7 @@ export default async function Home() {
         <MemberBanner />
 
         {/* 2. บริการยอดนิยม (Short title) */}
-        <PharmacistServiceSection />
+        <PharmacistServiceSection services={popularServices} />
 
         {/* 3. การประชุม */}
         <HomeEvents />
@@ -71,7 +72,7 @@ export default async function Home() {
         <PublicServiceSection />
 
         {/* 3. บริการเภสัชกร */}
-        <PharmacistServiceSection />
+        <PharmacistServiceSection services={popularServices} />
         <PharmacistRolesSection />
 
         {/* 4. 6 สาขาวิชาชีพเภสัชกร */}
