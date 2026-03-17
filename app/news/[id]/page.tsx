@@ -54,7 +54,7 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
                 </div>
                 <h1 className={`${styles.title} ThaiFont`}>{news.title}</h1>
                 <div className={styles.metadata}>
-                    <div className={styles.metaItem}>
+                    <div style={{ display: 'flex', gap: '0.5rem' }}>
                         <Calendar size={16} />
                         <span>{formattedDate}</span>
                     </div>

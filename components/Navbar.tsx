@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import { getWebSettings } from "@/lib/api";
 
 const navLinks = [
     { name: "หน้าแรก", href: "/" },
@@ -22,6 +23,19 @@ export default function Navbar() {
     const pathname = usePathname();
     const router = useRouter();
     const [lang, setLang] = useState("TH");
+    const [webSettings, setWebSettings] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchSettings = async () => {
+            try {
+                const settings = await getWebSettings();
+                setWebSettings(settings);
+            } catch (error) {
+                console.error('Error fetching web settings:', error);
+            }
+        };
+        fetchSettings();
+    }, []);
 
     return (
         <nav className={`${styles.navbar} ThaiFont`}>
@@ -29,7 +43,7 @@ export default function Navbar() {
             <div className={styles.topBanner}>
                 <div className={styles.brandArea}>
                     <Image
-                        src="/images/icon.jpg"
+                        src={webSettings?.logoPath || "/images/icon.jpg"}
                         alt="Pharmacy Council Logo"
                         width={40}
                         height={40}
@@ -37,10 +51,10 @@ export default function Navbar() {
                     />
                     <div>
                         <h1 className={`${styles.brandTitle} ThaiFont`}>
-                            สภาเภสัชกรรม
+                            {webSettings?.siteNameTh || "สภาเภสัชกรรม"}
                         </h1>
                         <p className={`${styles.brandSubtitle} ThaiFont`}>
-                            THE PHARMACY COUNCIL OF THAILAND
+                            {webSettings?.siteNameEn || "THE PHARMACY COUNCIL OF THAILAND"}
                         </p>
                     </div>
                     {pathname === "/login" && (
