@@ -46,7 +46,7 @@ export default async function Home() {
         <MemberBanner />
 
         {/* 2. บริการยอดนิยม (Short title) */}
-        <PharmacistServiceSection services={popularServices} />
+        <PopularServices services={popularServices} />
 
         {/* 3. การประชุม */}
         <HomeEvents />
@@ -73,7 +73,7 @@ export default async function Home() {
         <PublicServiceSection />
 
         {/* 3. บริการเภสัชกร */}
-        <PharmacistServiceSection services={popularServices} />
+        <PopularServices services={popularServices} />
         <PharmacistRolesSection />
 
         {/* 4. 6 สาขาวิชาชีพเภสัชกร */}
