@@ -10,18 +10,22 @@ interface ServiceListProps {
 export default function ServiceList({ services }: ServiceListProps) {
   if (!services || services.length === 0) return null;
 
+  const regularServices = services.filter(item => !item.isPopular);
+
+  if (regularServices.length === 0) return null;
+
   return (
     <section className={styles.section}>
       <h2 className="ThaiFont">บริการเภสัชกร</h2>
       <div className={styles.serviceListGrid}>
-        {services.map((item) => {
+        {regularServices.map((item) => {
           const content = (
             <>
               <div className={`${styles.serviceLabel} ThaiFont`}>
-                {item.shortName || item.name}
+                {item.shortName}
               </div>
               <div className={`${styles.serviceDesc} ThaiFont`}>
-                {item.shortName ? `${item.name}${item.description ? ` - ${item.description}` : ''}` : item.description || "-"}
+                {item.description}
               </div>
             </>
           );

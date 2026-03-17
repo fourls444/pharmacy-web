@@ -35,8 +35,7 @@ export default function PharmacistServiceSection({ services }: PharmacistService
                             <h3 className={styles.pharmaCardTitle}>
                                 {svc.shortName ? (
                                     <>
-                                        {svc.shortName}
-                                        <br />
+                                        
                                         {svc.name}
                                     </>
                                 ) : (

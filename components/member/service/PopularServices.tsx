@@ -17,7 +17,7 @@ export default function PopularServices({ services }: PopularServicesProps) {
           <div key={service.id} className={styles.popularCard}>
             <div className={styles.iconCircle}>
               {service.iconUrl ? (
-                <img src={service.iconUrl} alt={service.name} />
+                <img src={service.iconUrl} alt={service.name} style={{width:40}} />
               ) : (
                 <div style={{ width: '100%', height: '100%', backgroundColor: '#eee', borderRadius: '50%' }} />
               )}
@@ -25,8 +25,6 @@ export default function PopularServices({ services }: PopularServicesProps) {
             <h3 className="ThaiFont" style={{ fontSize: 36 }}>
                {service.shortName ? (
                    <>
-                     {service.shortName}
-                     <br />
                      {service.name}
                    </>
                ) : (

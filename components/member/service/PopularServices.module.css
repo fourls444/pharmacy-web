@@ -41,8 +41,10 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    width: 64px;
-    height: 64px;
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    background: linear-gradient(219deg, rgba(242, 241, 228, 1) 0%, rgba(205, 202, 165, 1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
