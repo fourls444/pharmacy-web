@@ -58,3 +58,27 @@
         font-size: 22px;
     }
 }
+
+@media (max-width: 600px) {
+    .serviceListItem {
+        padding: 20px 16px;
+        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .serviceLabel {
+        font-size: 20px;
+        min-width: auto;
+    }
+    
+    .section h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 24px;
+    }
+}

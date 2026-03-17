@@ -23,28 +23,9 @@ export default function PopularServices({ services }: PopularServicesProps) {
               )}
             </div>
             <h3 className="ThaiFont" style={{ fontSize: 36 }}>
-               {(() => {
-                   const name = service.name || "";
-                   
-                   // Custom logic to split the name into two lines nicely
-                   if (name === "คำขอประกาศนียบัตรวิชาชีพเภสัชกรรม") {
-                     return <>ประกาศ<br/>นียบัตร</>;
-                   }
-                   if (name === "คำขอต่ออายุใบอนุญาตเป็นผู้ประกอบวิชาชีพเภสัชกรรม") {
-                     return <>ต่อใบ<br/>อนุญาต</>;
-                   }
-                   if (name === "คำขอสมัครสมาชิกสภาเภสัชกรรม") {
-                     return <>คำขอ<br/>สมาชิก</>;
-                   }
-                   if (name === "คำขอขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพ") {
-                     return <>คำขอ<br/>ขึ้นทะเบียน</>;
-                   }
-
-                   // Default fallback
-                   return name;
-               })()}
+               {service.name}
             </h3>
-            <p className="ThaiFont">{service.description}</p>
+            <p className="ThaiFont" style={{ fontSize: 16 }}>{service.description}</p>
           </div>
         ))}
       </div>

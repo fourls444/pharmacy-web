@@ -181,3 +181,19 @@
     font-size: 0.875rem;
     opacity: 0.9;
 }
+
+/* === Responsive === */
+@media (max-width: 600px) {
+    .extensionGrid {
+        grid-template-columns: 1fr;
+    }
+    .footerInner {
+        gap: 1.5rem;
+    }
+    .mainTitle {
+        font-size: 1.6rem;
+    }
+    .bottomBar {
+        padding: 1rem;
+    }
+}

@@ -12,6 +12,7 @@ import PharmacistRolesSection from "@/components/home/PharmacistRolesSection";
 import OtherServiceSection from "@/components/member/home/OtherServiceSection";
 import HomeNewsSection from "@/components/home/HomeNewsSection";
 import MemberHighlightSection from "@/components/member/home/MemberHighlightSection";
+import PopularServices from "@/components/member/service/PopularServices";
 import { getHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
 import styles from "./home.module.css";
 

@@ -269,3 +269,28 @@
         padding: 0 1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .brandTitle {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .brandArea {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .actionsArea {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .userInfo {
+        padding-left: 1rem;
+    }
+    
+    .userDetails {
+        display: none; /* Hide ID on very small screens to save space */
+    }
+}

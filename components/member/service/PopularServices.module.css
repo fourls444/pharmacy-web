@@ -74,11 +74,48 @@
 @media (max-width: 1024px) {
     .popularGrid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popularGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .popularCard {
+        min-height: 200px;
+        padding: 24px 20px 20px 20px;
+    }
+
+    .popularCard h3 {
+        font-size: 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
     }
 }
 
 @media (max-width: 600px) {
     .popularGrid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .popularCard {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .iconCircle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .section h2 {
+        font-size: 24px;
     }
 }

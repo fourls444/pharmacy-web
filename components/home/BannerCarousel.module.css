@@ -138,3 +138,24 @@ a.slide {
     right: 0.5rem;
   }
 }
+
+@media (max-width: 600px) {
+  .banner {
+    aspect-ratio: 4 / 3; /* Taller on mobile to show more image */
+  }
+  
+  .arrow {
+    display: none; /* Hide arrows on small screens, rely on swipe or dots */
+  }
+  
+  .dots {
+    bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    aspect-ratio: 1 / 1; /* Square on very small screens if needed, or keep 4/3 */
+    max-height: 40vh;
+  }
+}

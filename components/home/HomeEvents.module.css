@@ -188,7 +188,7 @@
 
 @media (max-width: 768px) {
   .container {
-    max-width: 100%;
+    max-width: 95%;
   }
 
   .eventCard {
@@ -215,5 +215,33 @@
   .eventImageWrapper {
     width: 100%;
     height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detailRowFlex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .eventTitle {
+    font-size: 1.15rem;
   }
 }

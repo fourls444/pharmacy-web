@@ -313,7 +313,7 @@
 
 @media (max-width: 768px) {
   .container {
-    max-width: 90%;
+    max-width: 95%;
   }
 
   .highlightContent {
@@ -322,5 +322,38 @@
 
   .newsGrid {
     grid-template-columns: 1fr;
+  }
+  
+  .sectionTitle {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .highlightImageWrapper {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlightContent {
+    padding: 1.5rem;
+  }
+
+  .highlightTitle {
+    font-size: 1.25rem;
+  }
+
+  .readMoreBtn {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    width: 100%;
+    justify-content: center;
   }
 }
