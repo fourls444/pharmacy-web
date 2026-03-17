@@ -14,7 +14,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
     margin-top: 40px;
 }
 
@@ -25,11 +25,16 @@
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: all 0.3s ease;
-    min-height: 250px;
+    height: 100%;
+    box-sizing: border-box;
+    min-height: 240px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
 }
 
 .popularCard:hover {
@@ -60,8 +65,9 @@
     color: #797a2e;
     font-size: 26px;
     font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.1;
+    margin-bottom: 10px;
+    margin-top: auto;
+    line-height: 1.2;
 }
 
 .popularCard p {
@@ -69,6 +75,10 @@
     font-size: 13px;
     line-height: 1.4;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
