@@ -15,22 +15,27 @@ export default function PopularServices({ services }: PopularServicesProps) {
       <div className={styles.popularGrid}>
         {services.map((service) => (
           <div key={service.id} className={styles.popularCard}>
-            <div className={styles.iconCircle}>
-              {service.iconUrl ? (
-                <img src={service.iconUrl} alt={service.name} style={{width:40}} />
-              ) : (
-                <div style={{ width: '100%', height: '100%', backgroundColor: '#eee', borderRadius: '50%' }} />
-              )}
+            <div className={styles.cardContent}>
+                <div className={styles.iconCircle}>
+                  {service.iconUrl ? (
+                    <img src={service.iconUrl} alt={service.name} />
+                  ) : (
+                    <div style={{ width: '100%', height: '100%', backgroundColor: '#eee', borderRadius: '50%' }} />
+                  )}
+                </div>
+                <div>
+                   <h3 className="ThaiFont">
+                      {service.shortName ? (
+                          <>
+                            <span style={{ display: 'block' }}>{service.shortName}</span>
+                            <span style={{ fontSize: '0.9em', color: '#666', fontWeight: 500, marginTop: '4px', display: 'block' }}>{service.name}</span>
+                          </>
+                      ) : (
+                          service.name
+                      )}
+                   </h3>
+                </div>
             </div>
-            <h3 className="ThaiFont" style={{ fontSize: 36 }}>
-               {service.shortName ? (
-                   <>
-                     {service.name}
-                   </>
-               ) : (
-                   service.name
-               )}
-            </h3>
             <p className="ThaiFont">{service.description}</p>
           </div>
         ))}
