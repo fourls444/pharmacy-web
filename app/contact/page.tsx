@@ -50,7 +50,7 @@ export default async function ContactPage() {
                 <div className={styles.infoSection}>
                     <div className={styles.buildingImageWrapper}>
                         <Image
-                            src="/images/contact/image.png"
+                            src="/images/contact/Image.png"
                             alt="Contact Section Image"
                             fill
                             className={styles.buildingImage}
