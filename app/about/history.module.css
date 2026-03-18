@@ -149,7 +149,7 @@
 .infoList {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* ระยะห่างระหว่างบรรทัด (1), (2), (3) */
+    
 }
 
 .infoListItem {
