@@ -15,24 +15,19 @@ interface BannerItem {
 
 interface BannerCarouselProps {
   banners: BannerItem[];
+  pharmacistBanners?: BannerItem[];
   slogan?: string | null;
 }
 
-export default function BannerCarousel({ banners: publicBanners, slogan }: BannerCarouselProps) {
+export default function BannerCarousel({ 
+  banners: publicBanners, 
+  pharmacistBanners = [], 
+  slogan 
+}: BannerCarouselProps) {
   const { isLoggedIn } = useAuth();
   const [current, setCurrent] = useState(0);
 
-  const memberBanners: BannerItem[] = [
-    {
-      id: 'member-banner-1',
-      url: '/images/home/member/Section.png',
-      title: 'Member Exclusive Banner',
-      clickable: false,
-      linkUrl: ''
-    }
-  ];
-
-  const activeBanners = isLoggedIn ? memberBanners : publicBanners;
+  const activeBanners = isLoggedIn ? pharmacistBanners : publicBanners;
 
   const next = useCallback(() => {
     setCurrent(prev => (prev + 1) % activeBanners.length);

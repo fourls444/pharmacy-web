@@ -13,14 +13,15 @@ import OtherServiceSection from "@/components/member/home/OtherServiceSection";
 import HomeNewsSection from "@/components/home/HomeNewsSection";
 import MemberHighlightSection from "@/components/member/home/MemberHighlightSection";
 import PopularServices from "@/components/member/service/PopularServices";
-import { getHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
+import { getHomeContent, getPharmacistHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
 import styles from "./home.module.css";
 
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const [homeContent, settings, allNews, popularServices] = await Promise.all([
+  const [homeContent, pharmacistContent, settings, allNews, popularServices] = await Promise.all([
     getHomeContent(),
+    getPharmacistHomeContent(),
     getWebSettings(),
     getNews(),
     getPopularServices(),
@@ -33,10 +34,18 @@ export default async function Home() {
     .filter(b => b.active)
     .sort((a, b) => a.order - b.order);
 
+  const pharmacistBanners = (pharmacistContent.banners || [])
+    .filter(b => b.active)
+    .sort((a, b) => a.order - b.order);
+
   return (
     <div className={styles.page}>
       {/* === Banner Carousel 16:9 === (Everyone) */}
-      <BannerCarousel banners={activeBanners} slogan={settings.slogan} />
+      <BannerCarousel
+        banners={activeBanners}
+        pharmacistBanners={pharmacistBanners}
+        slogan={settings.slogan}
+      />
 
       {/* ========================================== */}
       {/* ===           MEMBER VIEW              === */}

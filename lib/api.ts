@@ -122,6 +122,10 @@ export interface HomeContent {
     popups: any[];
 }
 
+export interface PharmacistHomeContent {
+    banners: BannerItem[];
+}
+
 export async function getHomeContent(): Promise<HomeContent> {
     if (!API_BASE_URL) {
         console.error('NEXT_PUBLIC_API_URL is not defined');
@@ -141,6 +145,28 @@ export async function getHomeContent(): Promise<HomeContent> {
     } catch (error) {
         console.error('Error fetching home content:', error);
         return { banners: [], popups: [] };
+    }
+}
+
+export async function getPharmacistHomeContent(): Promise<PharmacistHomeContent> {
+    if (!API_BASE_URL) {
+        console.error('NEXT_PUBLIC_API_URL is not defined');
+        return { banners: [] };
+    }
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/pharmacist-home-content`, {
+            next: { revalidate: 60 },
+        });
+
+        if (!res.ok) {
+            throw new Error(`Failed to fetch pharmacist home content: ${res.statusText}`);
+        }
+
+        return res.json();
+    } catch (error) {
+        console.error('Error fetching pharmacist home content:', error);
+        return { banners: [] };
     }
 }
 
