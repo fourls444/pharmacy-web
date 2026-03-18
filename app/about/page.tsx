@@ -137,99 +137,52 @@ export default function AboutHistoryPage() {
           วาระที่ 11 (พ.ศ. 2568-2570) 
         </p>
 
-        <div className={styles.card}>
-          <div className={styles.imageWrapper}>
-            <Image
-              alt="สภาเภสัชกรรม1"
+       <div className={styles.infoCard}>
+          <div className={styles.infoImageWrapper}>
+            <img
+              alt="วัตถุประสงค์การก่อตั้งสภาเภสัชกรรม"
               src="/images/about/list/imgabout2.png"
-              fill
-              className={styles.image}
+              className={styles.infoImage}
             />
           </div>
 
-          <div className={styles.content}>
-            <h2 className={styles.title}>วัตถุประสงค์การก่อตั้งสภาเภสัชกรรม</h2>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                (มาตรา 8 แห่งพระราชบัญญัติวิชาชีพเภสัชกรรม พ.ศ. 2537)
-              </li>
-              <li className={styles.listItem}>
-                (1) ส่งเสริมการศึกษาการวิจัยและการประกอบวิชาชีพเภสัชกรรม
-              </li>
-              <li className={styles.listItem}>
-                (2) ส่งเสริมความสามัคคีและผดุงเกียรติของสมาชิก
-              </li>
-              <li className={styles.listItem}>
-                (3) ผดุงไว้ซึ่งสิทธิ
-                ความเป็นธรรมและส่งเสริมสวัสดิการให้แก่สมาชิก
-              </li>
-              <li className={styles.listItem}>
-                (4)
-                ควบคุมความประพฤติของผู้ประกอบวิชาชีพเภสัชกรรมให้ถูกต้องตามจรรยาบรรณ
-                แห่งวิชาชีพเภสัชกรรม
-              </li>
-              <li className={styles.listItem}>
-                (5) ช่วยเหลือ แนะนำ
-                เผยแพร่และให้การศึกษาแก่ประชาชนและองค์กรอื่นในเรื่อง
-                ที่เกี่ยวกับการเภสัชกรรม และการสาธารณสุข
-              </li>
-              <li className={styles.listItem}>
-                (6)
-                ให้คำปรึกษาหรือข้อเสนอแนะต่อรัฐบาลเกี่ยวกับการเภสัชกรรมและการสาธารณสุข
-              </li>
-              <li className={styles.listItem}>
-                (7) เป็นตัวแทนของผู้ประกอบวิชาชีพเภสัชกรรมในประเทศไทย
-              </li>
-            </ul>
+          <div className={styles.infoContent}>
+            <h2 className={styles.infoTitle}>วัตถุประสงค์การก่อตั้งสภาเภสัชกรรม</h2>
+            <p className={styles.infoSubtitle}>(มาตรา 8 แห่งพระราชบัญญัติวิชาชีพเภสัชกรรม พ.ศ. 2537)</p>
+            <div className={styles.infoList}>
+              <p className={styles.infoListItem}>(1) ส่งเสริมการศึกษาการวิจัยและการประกอบวิชาชีพเภสัชกรรม</p>
+              <p className={styles.infoListItem}>(2) ส่งเสริมความสามัคคีและผดุงเกียรติของสมาชิก</p>
+              <p className={styles.infoListItem}>(3) ผดุงไว้ซึ่งสิทธิ ความเป็นธรรมและส่งเสริมสวัสดิการให้แก่สมาชิก</p>
+              <p className={styles.infoListItem}>(4) ควบคุมความประพฤติของผู้ประกอบวิชาชีพเภสัชกรรมให้ถูกต้องตามจรรยาบรรณ แห่งวิชาชีพเภสัชกรรม</p>
+              <p className={styles.infoListItem}>(5) ช่วยเหลือ แนะนำ เผยแพร่และให้การศึกษาแก่ประชาชนและองค์กรอื่นในเรื่อง ที่เกี่ยวกับการเภสัชกรรม และการสาธารณสุข</p>
+              <p className={styles.infoListItem}>(6) ให้คำปรึกษาหรือข้อเสนอแนะต่อรัฐบาลเกี่ยวกับการเภสัชกรรมและการสาธารณสุข</p>
+              <p className={styles.infoListItem}>(7) เป็นตัวแทนของผู้ประกอบวิชาชีพเภสัชกรรมในประเทศไทย</p>
+            </div>
           </div>
         </div>
 
-        <div className={styles.card}>
-          <div className={styles.imageWrapper}>
-            <Image
-              alt="สภาเภสัชกรรม1"
+        {/* การ์ดใบที่ 2: อำนาจหน้าที่ */}
+        <div className={styles.infoCard}>
+          <div className={styles.infoImageWrapper}>
+            <img
+              alt="อำนาจหน้าที่ของสภาเภสัชกรรม"
               src="/images/about/list/imgabout3.png"
-              fill
-              className={styles.image}
+              className={styles.infoImage}
             />
           </div>
 
-          <div className={styles.content}>
-            <h2 className={styles.title}>วัตถุประสงค์การก่อตั้งสภาเภสัชกรรม</h2>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                (มาตรา 9 แห่งพระราชบัญญัติวิชาชีพเภสัชกรรม พ.ศ. 2537)
-              </li>
-              <li className={styles.listItem}>
-                (1)
-                รับขึ้นทะเบียนและออกใบอนุญาตให้แก่ผู้ขอเป็นผู้ประกอบวิชาชีพเภสัชกรรม
-              </li>
-              <li className={styles.listItem}>
-                (2) วินิจฉัยชี้ขาดตามมาตรา 42 วรรคสาม
-              </li>
-              <li className={styles.listItem}>
-                (3) รับรองปริญญา
-                ประกาศนียบัตรในวิชาเภสัชศาสตร์หรือวุฒิบัตรในวิชาชีพเภสัชกรรมของสถาบันต่าง
-                ๆ เพื่อประโยชน์ในการสมัครเป็นสมาชิก
-              </li>
-              <li className={styles.listItem}>
-                (4) รับรองหลักสูตรต่าง ๆ
-                สำหรับการฝึกอบรมเป็นผู้ชำนาญการในสาขาต่าง ๆ ของ
-                วิชาชีพเภสัชกรรมของสถาบันที่ทำการฝึกอบรมเป็นผู้ชำนาญการในสาขาต่าง
-                ๆ ของ วิชาชีพเภสัชกรรม
-              </li>
-              <li className={styles.listItem}>
-                (5) รับรองวิทยาฐานะของสถาบันที่ทำการฝึกอบรมใน (4)
-              </li>
-              <li className={styles.listItem}>
-                (6)
-                ออกหนังสืออนุมัติหรือวุฒิบัตรแสดงความรู้ความชำนาญในการประกอบวิชาชีพ
-                เภสัชกรรมสาขาต่าง ๆ และออก หนังสือแสดงวุฒิอื่นในวิชาชีพเภสัชกรรม
-              </li>
-              <li className={styles.listItem}>
-                (7) ดำเนินการให้เป็นไปตามวัตถุประสงค์ของสภาเภสัชกรรม
-              </li>
-            </ul>
+          <div className={styles.infoContent}>
+            <h2 className={styles.infoTitle}>อำนาจหน้าที่ของสภาเภสัชกรรม</h2>
+            <p className={styles.infoSubtitle}>(มาตรา 9 แห่งพระราชบัญญัติวิชาชีพเภสัชกรรม พ.ศ. 2537)</p>
+            <div className={styles.infoList}>
+              <p className={styles.infoListItem}>(1) รับขึ้นทะเบียนและออกใบอนุญาตให้แก่ผู้ขอเป็นผู้ประกอบวิชาชีพเภสัชกรรม</p>
+              <p className={styles.infoListItem}>(2) วินิจฉัยชี้ขาดตามมาตรา 42 วรรคสาม</p>
+              <p className={styles.infoListItem}>(3) รับรองปริญญา ประกาศนียบัตรในวิชาเภสัชศาสตร์หรือวุฒิบัตรในวิชาชีพเภสัชกรรมของสถาบันต่าง ๆ เพื่อประโยชน์ในการสมัครเป็นสมาชิก</p>
+              <p className={styles.infoListItem}>(4) รับรองหลักสูตรต่าง ๆ สำหรับการฝึกอบรมเป็นผู้ชำนาญการในสาขาต่าง ๆ ของ วิชาชีพเภสัชกรรมของสถาบันที่ทำการฝึกอบรมเป็นผู้ชำนาญการในสาขาต่าง ๆ ของ วิชาชีพเภสัชกรรม</p>
+              <p className={styles.infoListItem}>(5) รับรองวิทยาฐานะของสถาบันที่ทำการฝึกอบรมใน (4)</p>
+              <p className={styles.infoListItem}>(6) ออกหนังสืออนุมัติหรือวุฒิบัตรแสดงความรู้ความชำนาญในการประกอบวิชาชีพ เภสัชกรรมสาขาต่าง ๆ และออก หนังสือแสดงวุฒิอื่นในวิชาชีพเภสัชกรรม</p>
+              <p className={styles.infoListItem}>(7) ดำเนินการให้เป็นไปตามวัตถุประสงค์ของสภาเภสัชกรรม</p>
+            </div>
           </div>
         </div>
 
