@@ -99,11 +99,94 @@
     width: 1rem;
     height: 1rem;
     opacity: 0.7;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .langSwitch:hover .langSwitchArrow {
     opacity: 1;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.langDropdownContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.langDropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 180px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    padding: 0.5rem;
+    border: 1px solid #f3f4f6;
+    animation: dropdownPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top right;
+}
+
+.langDropdownItem {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4b5563; /* text-gray-600 */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.langDropdownItem:hover {
+    background-color: #f9fdf3;
+    color: #686805;
+}
+
+.langDropdownItemActive {
+    background-color: #f0f4e0;
+    color: #686805;
+    font-weight: 600;
+}
+
+.langDropdownItemActive::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #686805;
+    border-radius: 50%;
+}
+
+.langSelectedText {
+    display: flex;
+    flex-direction: column;
+}
+
+.langEngName {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+@keyframes dropdownPop {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .loginBtn {
@@ -217,17 +300,17 @@
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .brandArea {
         width: 100%;
         justify-content: center;
     }
-    
+
     .actionsArea {
         width: 100%;
         justify-content: center;
     }
-    
+
     .lowerNav {
         padding: 0 1rem;
     }
@@ -238,26 +321,26 @@
         font-size: 1.1rem;
         text-align: center;
     }
-    
+
     .systemName {
         font-size: 0.9rem;
     }
-    
+
     .navDivider {
         height: 30px;
         margin: 0 0.5rem;
     }
-    
+
     .brandArea {
         flex-wrap: wrap;
         gap: 0.5rem;
     }
-    
+
     .actionsArea {
         flex-wrap: wrap;
         gap: 1rem;
     }
-    
+
     .loginBtn {
         padding: 0.4rem 1rem;
         font-size: 0.9rem;

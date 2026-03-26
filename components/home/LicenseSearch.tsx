@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, SlidersHorizontal, ChevronDown , ListFilter} from 'lucide-react';
+import { Search, SlidersHorizontal, ChevronDown, ListFilter } from 'lucide-react';
 import styles from './LicenseSearch.module.css';
 
 const searchOptions = [
