@@ -12,10 +12,11 @@
 }
 
 .sectionTitle {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #1f2937; /* เปลี่ยนเป็นสีดำเข้มตามรูป */
-  margin: 0 0 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #111827;
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
 }
 
 .sectionSubtitle {
@@ -34,6 +35,20 @@
   min-height: 440px; /* เพิ่มความสูงให้ตัวการ์ดที่สูงขึ้น */
   margin-bottom: 2rem;
   perspective: 1200px;
+}
+
+.carouselWrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(115, 115, 0, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .carouselTrack {
@@ -56,9 +71,14 @@
   backface-visibility: hidden;
   background: #f3f4f6;
   
-  /* 🔴 แก้บรรทัดนี้: แยก transition เพื่อให้ z-index ทำงานทันที 100% */
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-              opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  /* 🔴 แยก transition เพื่อให้ z-index ทำงานทันที 100% */
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s ease;
+}
+
+.card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -77,10 +97,16 @@
 
 /* 🔴 Card Positions — จัดแบบซ้อนกันแนวตรง (ไม่เอียงแล้ว) */
 .cardActive {
-  z-index: 5;
-  transform: translateX(0) scale(1);
+  z-index: 10;
+  transform: translateX(0) scale(1.05) translateY(-20px);
   opacity: 1;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15); /* เงาเด่นๆ ตรงกลาง */
+  box-shadow: 0 30px 60px rgba(115, 115, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+.cardActive:hover {
+  transform: translateX(0) scale(1.1) translateY(-30px);
+  filter: brightness(1.1);
 }
 
 .cardLeft1 {
@@ -132,50 +158,85 @@
 
 /* === Navigation Arrows === */
 .navBtn {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: 1px solid #737300; /* สีเขียวมะกอก */
-  background: transparent;
+  border: 2px solid rgba(115, 115, 0, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   color: #737300;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .navBtn:hover {
   background: #737300;
   color: #ffffff;
+  border-color: #737300;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(115, 115, 0, 0.3);
+}
+
+.navBtn:active {
+  transform: scale(0.95);
 }
 
 /* === Slide Text Content === */
 .slideContent {
   flex: 1;
-  padding: 0 2rem;
-  animation: fadeIn 0.4s ease;
+  padding: 0 3rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .slideTitle {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  animation: slideInText 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .slideDesc {
-  font-size: 1.05rem;
-  color: #4b5563;
+  font-size: 1.1rem;
+  color: #374151;
   margin: 0;
-  line-height: 1.7;
+  line-height: 1.8;
   white-space: pre-line;
+  animation: slideInText 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards both;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideInText {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* === Counter === */
+.counter {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #737300;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  display: block;
 }
 
 /* === Dots === */
