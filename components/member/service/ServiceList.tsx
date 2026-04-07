@@ -16,6 +16,7 @@ export default function ServiceList({ services }: ServiceListProps) {
 
   return (
     <section className={styles.section}>
+      <div className={styles.sectionCon}>
       <h2 className="ThaiFont">บริการเภสัชกร</h2>
       <div className={styles.serviceListGrid}>
         {regularServices.map((item) => {
@@ -51,6 +52,7 @@ export default function ServiceList({ services }: ServiceListProps) {
             </div>
           );
         })}
+      </div>
       </div>
     </section>
   );

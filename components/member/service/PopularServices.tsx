@@ -12,6 +12,7 @@ export default function PopularServices({ services }: PopularServicesProps) {
 
   return (
     <section className={styles.section}>
+      <div className={styles.sectionCon}>
       <h2 className="ThaiFont">บริการยอดนิยม</h2>
       <div className={styles.popularGrid}>
         {services.map((service) => (
@@ -36,6 +37,7 @@ export default function PopularServices({ services }: PopularServicesProps) {
             <p className="ThaiFont" style={{ fontSize: '15px',whiteSpace: 'pre-wrap' }}>{service.description}</p>
           </Link>
         ))}
+      </div>
       </div>
     </section>
   );

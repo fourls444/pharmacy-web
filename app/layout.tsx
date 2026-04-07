@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} antialiased bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         <Providers>
           <AppHeader />
-          <main className="flex-grow bg-white">{children}</main>
+          <main className="flex-grow bg-[#f5f5f5]">{children}</main>
           <Footer />
         </Providers>
       </body>

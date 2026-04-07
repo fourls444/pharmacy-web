@@ -2,6 +2,7 @@
 .pageWrapper {
     min-height: 100vh;
     background-color: #ffffff;
+    padding-bottom: 3rem;
 }
 
 .banner {
@@ -18,7 +19,7 @@
 
 /* === Layout: Sidebar + Content === */
 .layoutContainer {
-    max-width: 80%;
+    max-width: 90%;
     margin: 3rem auto 4rem;
     display: flex;
     gap: 3rem;

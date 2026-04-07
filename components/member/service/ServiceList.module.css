@@ -1,7 +1,12 @@
 .section {
-    max-width: 1200px;
+    background: #ffffff;
     margin: auto;
     padding: 40px 20px;
+}
+
+.sectionCon{
+    max-width: 90%;
+    margin: auto;
 }
 
 .section h2 {
