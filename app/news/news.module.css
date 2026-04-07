@@ -1,6 +1,7 @@
 .pageWrapper {
     min-height: 100vh;
     background-color: #ffffff;
+    padding-bottom: 3rem;
 }
 
 .banner {
@@ -43,9 +44,9 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 90%;
     margin: 4rem auto 4rem;
-    padding: 0 1.5rem;
+    
     position: relative;
     z-index: 2;
 }
