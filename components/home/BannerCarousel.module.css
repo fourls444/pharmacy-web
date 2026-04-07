@@ -47,16 +47,49 @@ a.slide {
   z-index: 2;
   pointer-events: none;
   display: flex;
+  align-items: flex-end; /* Align to bottom */
+  padding: 0 8% 12%; /* Adjusted bottom padding to match mockup height */
+  /* Smoother, more professional olive gradient */
+  background: linear-gradient(
+    90deg, 
+    rgba(164, 172, 88, 0.4) 0%, 
+    rgba(164, 172, 88, 0.25) 15%, 
+    rgba(164, 172, 88, 0) 50%
+  );
+}
+
+.content {
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 6% 3%;
+  gap: 0.5rem; /* Better spacing like in the mockup */
+  max-width: 900px;
+}
+
+.title {
+  font-size: clamp(3rem, 6.5vw, 6rem); /* Larger title */
+  font-weight: 850;
+  color: #3e4414; /* Deeper olive-brown from the mockup */
+  margin: 0;
+  line-height: 0.9;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.subtitle {
+  font-size: clamp(1.4rem, 2.8vw, 2.5rem); /* Significantly larger subtitle */
+  font-weight: 800;
+  color: #3e4414;
+  margin: 0 0 0.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .slogan {
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.1rem, 2vw, 1.6rem); /* Larger, more readable slogan */
+  font-weight: 700; /* Bolder as seen in the mockup */
+  color: #3e4414;
   margin: 0;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  font-style: normal;
+  line-height: 1.4;
 }
 
 /* === Arrows === */
@@ -119,7 +152,26 @@ a.slide {
 }
 
 /* === Responsive === */
+@media (max-width: 1024px) {
+  .overlay {
+    padding: 0 6% 8%; /* Adjusting but keeping bottom padding */
+  }
+}
+
 @media (max-width: 768px) {
+  .overlay {
+    background: linear-gradient(
+      90deg, 
+      rgba(212, 219, 150, 0.7) 0%, 
+      rgba(212, 219, 150, 0.3) 40%, 
+      rgba(212, 219, 150, 0) 100%
+    );
+  }
+
+  .content {
+    gap: 0.1rem;
+  }
+
   .banner {
     aspect-ratio: 16 / 10;
     max-height: 50vh;
@@ -154,6 +206,14 @@ a.slide {
 }
 
 @media (max-width: 480px) {
+  .overlay {
+    padding: 0 4% 6%;
+  }
+  
+  .title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem); /* Smaller on tiny mobile */
+  }
+
   .banner {
     aspect-ratio: 1 / 1; /* Square on very small screens if needed, or keep 4/3 */
     max-height: 40vh;

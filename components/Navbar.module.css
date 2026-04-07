@@ -1,3 +1,6 @@
+/* ==========================================
+   Main Layout & Base Navbar
+   ========================================== */
 .navbar {
     width: 100%;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -5,7 +8,9 @@
     position: relative;
 }
 
-/* Top Banner */
+/* ==========================================
+   Top Banner (Green Section)
+   ========================================== */
 .topBanner {
     background-color: #686805;
     color: white;
@@ -59,7 +64,9 @@
     color: white;
 }
 
-/* User Actions */
+/* ==========================================
+   User Action Area (Language & Login)
+   ========================================== */
 .actionsArea {
     display: flex;
     align-items: center;
@@ -207,7 +214,9 @@
     color: #737300;
 }
 
-/* Lower Nav */
+/* ==========================================
+   Lower Navigation (White Section)
+   ========================================== */
 .lowerNav {
     background-color: white;
     border-bottom: 1px solid #f3f4f6;
@@ -287,7 +296,9 @@
     border-radius: 4px 4px 0 0;
 }
 
-/* === Responsive === */
+/* ==========================================
+   Responsive Design & Mobile Compatibility
+   ========================================== */
 @media (max-width: 1024px) {
     .topBanner {
         padding: 0.75rem 2rem;

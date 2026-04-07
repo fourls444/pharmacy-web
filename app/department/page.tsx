@@ -39,7 +39,10 @@ export default async function DepartmentPage() {
             <header className={styles.banner}>
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-                       
+                        <h1 className={styles.bannerTitle}>หน่วยงาน</h1>
+                        <p className={styles.bannerSubtitle}>
+                            หน่วยงานในกำกับของสภาเภสัชกรรม
+                        </p>
                     </div>
                 </div>
             </header>

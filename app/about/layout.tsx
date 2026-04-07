@@ -12,7 +12,10 @@ export default function AboutLayout({
             <header className={styles.banner}>
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-                        
+                        <h1 className={styles.bannerTitle}>เกี่ยวกับองค์กร</h1>
+                        <p className={styles.bannerSubtitle}>
+                            สภาเภสัชกรรม ก่อตั้งขึ้นตามพระราชบัญญัติวิชาชีพเภสัชกรรม พ.ศ. 2537
+                        </p>
                     </div>
                 </div>
             </header>

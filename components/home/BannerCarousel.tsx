@@ -19,10 +19,10 @@ interface BannerCarouselProps {
   slogan?: string | null;
 }
 
-export default function BannerCarousel({ 
-  banners: publicBanners, 
-  pharmacistBanners = [], 
-  slogan 
+export default function BannerCarousel({
+  banners: publicBanners,
+  pharmacistBanners = [],
+  slogan
 }: BannerCarouselProps) {
   const { isLoggedIn } = useAuth();
   const [current, setCurrent] = useState(0);
@@ -86,12 +86,16 @@ export default function BannerCarousel({
         })}
       </div>
 
-      {/* Overlay (slogan) */}
-      {slogan && (
-        <div className={styles.overlay}>
-          <p className={styles.slogan}>"{slogan}"</p>
+      {/* Overlay (Council Name & Slogan) */}
+      <div className={styles.overlay}>
+        <div className={styles.content}>
+          <h1 className={styles.title}>สภาเภสัชกรรม</h1>
+          <h2 className={styles.subtitle}>The Pharmacy Council of Thailand</h2>
+          <p className={styles.slogan}>
+            {slogan ? `“${slogan}”` : "“สภาเคียงข้าง สร้างวิชาชีพชั้นนำ ทำให้ประชาชนวางใจ”"}
+          </p>
         </div>
-      )}
+      </div>
 
       {/* Arrows */}
       {activeBanners.length > 1 && (

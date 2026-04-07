@@ -38,7 +38,10 @@ export default function OtherServicesPage() {
             <header className={styles.banner}>
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-                        
+                        <h1 className={styles.bannerTitle}>ดาวน์โหลด</h1>
+                        <p className={styles.bannerSubtitle}>
+                            งานการศึกษา งานทะเบียนและใบอนุญาต หนังสือรับรองและอื่น ๆ
+                        </p>
                     </div>
                 </div>
             </header>

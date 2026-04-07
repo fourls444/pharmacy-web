@@ -40,7 +40,8 @@ export default async function ContactPage() {
             <header className={styles.banner}>
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
-
+                        <h1 className={styles.bannerTitle}>ติดต่อ</h1>
+                        <p className={styles.bannerSubtitle}>ติดต่อสอบถาม</p>
                     </div>
                 </div>
             </header>

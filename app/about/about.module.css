@@ -12,6 +12,38 @@
     background: url('/images/about/imgbg2.png') center/cover no-repeat;
 }
 
+.bannerOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    /* Soft dark olive gradient at the bottom */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(30, 40, 20, 0.4) 30%, transparent 70%);
+    display: flex;
+    align-items: flex-end;
+    padding: 0 10% 4.5rem;
+}
+
+.bannerContent {
+    color: white;
+    max-width: 1000px;
+}
+
+.bannerTitle {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bannerSubtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.95;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
 
 
 

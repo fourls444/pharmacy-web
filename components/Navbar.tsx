@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
 import { getWebSettings } from "@/lib/api";
 
+// --- Navigation Configuration ---
 const navLinks = [
     { name: "หน้าแรก", href: "/" },
     { name: "เกี่ยวกับองค์กร", href: "/about" },
@@ -20,6 +21,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+    // --- State & Hooks ---
     const pathname = usePathname();
     const router = useRouter();
     const [lang, setLang] = useState("TH");
@@ -51,7 +53,7 @@ export default function Navbar() {
 
     return (
         <nav className={`${styles.navbar} ThaiFont`}>
-            {/* Top Banner (Green) */}
+            {/* 1. TOP BANNER (Green Section) - Logo, Titles, and Actions */}
             <div className={styles.topBanner}>
                 <div className={styles.brandArea}>
                     <Image
@@ -80,6 +82,7 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.actionsArea}>
+                    {/* 1.2 User Actions (Language & Login) */}
                     {/* Language Switcher */}
                     <div className={styles.langDropdownContainer} ref={dropdownRef}>
                         <div 
@@ -154,7 +157,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Lower Nav (White) */}
+            {/* 2. LOWER NAVIGATION (White Section) - Main Menu Links */}
             <div className={styles.lowerNav}>
                 <div className={styles.navContainer}>
                     {navLinks.map((link) => {

@@ -10,9 +10,12 @@ export default async function NewsPage() {
         <div className={styles.pageWrapper}>
             {/* Banner Section */}
             <header className={styles.banner}>
-
                 <div className={styles.bannerOverlay}>
                     <div className={styles.bannerContent}>
+                        <h1 className={styles.bannerTitle}>ข่าวสาร</h1>
+                        <p className={styles.bannerSubtitle}>
+                            ติดตามทุกข่าวสารสำคัญของสภาเภสัชกรรม
+                        </p>
                     </div>
                 </div>
             </header>
