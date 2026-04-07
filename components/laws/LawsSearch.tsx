@@ -61,9 +61,8 @@ export default function LawsSearch({
               <ul className={styles.dropdownMenu}>
                 <li>
                   <button
-                    className={`${styles.dropdownItem} ThaiFont ${
-                      categoryFilter === "all" ? styles.dropdownItemActive : ""
-                    }`}
+                    className={`${styles.dropdownItem} ThaiFont ${categoryFilter === "all" ? styles.dropdownItemActive : ""
+                      }`}
                     onClick={() => onCategoryFilterChange("all")}
                   >
                     ทั้งหมด
@@ -72,9 +71,8 @@ export default function LawsSearch({
                 {categories.map((cat) => (
                   <li key={cat.key}>
                     <button
-                      className={`${styles.dropdownItem} ThaiFont ${
-                        categoryFilter === cat.key ? styles.dropdownItemActive : ""
-                      }`}
+                      className={`${styles.dropdownItem} ThaiFont ${categoryFilter === cat.key ? styles.dropdownItemActive : ""
+                        }`}
                       onClick={() => onCategoryFilterChange(cat.key)}
                     >
                       {cat.label}
@@ -102,9 +100,8 @@ export default function LawsSearch({
               <ul className={styles.dropdownMenu}>
                 <li>
                   <button
-                    className={`${styles.dropdownItem} ThaiFont ${
-                      yearFilter === "all" ? styles.dropdownItemActive : ""
-                    }`}
+                    className={`${styles.dropdownItem} ThaiFont ${yearFilter === "all" ? styles.dropdownItemActive : ""
+                      }`}
                     onClick={() => onYearFilterChange("all")}
                   >
                     ทั้งหมด
@@ -113,9 +110,8 @@ export default function LawsSearch({
                 {availableYears.map((y) => (
                   <li key={y}>
                     <button
-                      className={`${styles.dropdownItem} ThaiFont ${
-                        yearFilter === y.toString() ? styles.dropdownItemActive : ""
-                      }`}
+                      className={`${styles.dropdownItem} ThaiFont ${yearFilter === y.toString() ? styles.dropdownItemActive : ""
+                        }`}
                       onClick={() => onYearFilterChange(y.toString())}
                     >
                       พ.ศ. {y}

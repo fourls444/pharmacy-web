@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./PharmacyCarousel.module.css";
 import DotPagination from "@/components/ui/DotPagination";
@@ -64,6 +64,8 @@ function getPositionClass(offset: number): string {
 
 export default function PharmacyCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const goTo = useCallback((index: number) => {
     setActiveIndex(index);
@@ -77,6 +79,16 @@ export default function PharmacyCarousel() {
     setActiveIndex((prev) => (prev + 1) % slides.length);
   }, []);
 
+  // Auto-play logic
+  useEffect(() => {
+    if (!isPaused) {
+      timerRef.current = setInterval(goNext, 5000);
+    }
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused, goNext]);
+
   return (
     <section className={styles.section}>
       <Container className={styles.sectionInner}>
@@ -87,7 +99,11 @@ export default function PharmacyCarousel() {
         </p>
 
         {/* Carousel */}
-        <div className={styles.carouselWrapper}>
+        <div 
+          className={styles.carouselWrapper}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <div className={styles.carouselTrack}>
             {slides.map((slide, i) => {
               let offset = i - activeIndex;
@@ -125,12 +141,15 @@ export default function PharmacyCarousel() {
             onClick={goPrev}
             aria-label="Previous slide"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
 
           <div className={styles.slideContent} key={activeIndex}>
+            <span className={styles.counter}>
+              {String(activeIndex + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+            </span>
             <h3 className={styles.slideTitle}>{slides[activeIndex].title}</h3>
             <p className={styles.slideDesc}>{slides[activeIndex].desc}</p>
           </div>
@@ -140,7 +159,7 @@ export default function PharmacyCarousel() {
             onClick={goNext}
             aria-label="Next slide"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
