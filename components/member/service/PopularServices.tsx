@@ -33,7 +33,7 @@ export default function PopularServices({ services }: PopularServicesProps) {
             <h3 className="ThaiFont" style={{ fontSize: '30px', lineHeight: 1.2 }}>
                {service.shortName || service.name}
             </h3>
-            <p className="ThaiFont" style={{ fontSize: '15px' }}>{service.description}</p>
+            <p className="ThaiFont" style={{ fontSize: '15px',whiteSpace: 'pre-wrap' }}>{service.description}</p>
           </Link>
         ))}
       </div>
