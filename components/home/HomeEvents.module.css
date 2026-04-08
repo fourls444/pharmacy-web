@@ -95,10 +95,36 @@
   font-size: 1.25rem;
   font-weight: 700;
   color: #1f2937;
-  margin: 0 0 1rem 0;
+  margin: 0;
   line-height: 1.4;
+}
 
-  
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cpeBadge {
+  background: #fbfdf0;
+  border: 1px solid #dce2c1;
+  color: #4b5320;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.cpeIcon {
+  font-size: 1rem;
+  color: #7b7b1e;
 }
 
 .eventDetails {

@@ -1,5 +1,6 @@
 import { MapPin, Calendar, Users, Building2, ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./RecommendedEvent.module.css";
+import { FaGraduationCap } from "react-icons/fa";
 
 export default function RecommendedEvent() {
   return (
@@ -19,9 +20,15 @@ export default function RecommendedEvent() {
       <div className={styles.recommendCard}>
         <img src="/images/event/event1.jpg" className={styles.recommendImage} alt="Meeting preview" />
         <div className={styles.recommendContent}>
-          <h3 className="ThaiFont">
-            สภาเภสัชกรรมเปิดอบรมหลักสูตรอบรมระยะสั้นการบริบาลทาง เภสัชกรรม (สาขาปฐมภูมิ) รุ่นที่ 5
-          </h3>
+          <div className={styles.titleWrapper}>
+            <h3 className="ThaiFont">
+              สภาเภสัชกรรมเปิดอบรมหลักสูตรอบรมระยะสั้นการบริบาลทาง เภสัชกรรม (สาขาปฐมภูมิ) รุ่นที่ 5
+            </h3>
+            <div className={styles.cpeBadge}>
+              <FaGraduationCap className={styles.cpeIcon} />
+              <span>CPE 10.0 หน่วยกิต</span>
+            </div>
+          </div>
 
           <div className={styles.infoItem}>
             <MapPin size={20} className={styles.grayIcon} />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MapPin, Calendar, Users, Building2 } from "lucide-react";
 import styles from "./HomeEvents.module.css";
+import { FaGraduationCap } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
@@ -17,6 +18,7 @@ const MOCK_EVENTS = [
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
     image: "/images/home/image1.png",
+    cpe: "10.0",
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const MOCK_EVENTS = [
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
     image: "/images/home/image2.png",
+    cpe: "5.5",
   },
   {
     id: 3,
@@ -41,6 +44,7 @@ const MOCK_EVENTS = [
     capacity: "เต็ม",
     agency: "ราชวิทยาลัย",
     image: "/images/home/image3.png",
+    cpe: "3.0",
   },
 ];
 
@@ -61,7 +65,15 @@ export default function HomeEvents() {
 
               {/* Event Content */}
               <div className={styles.eventContent}>
-                <h3 className={styles.eventTitle}>{event.title}</h3>
+                <div className={styles.titleWrapper}>
+                  <h3 className={styles.eventTitle}>{event.title}</h3>
+                  {event.cpe && event.audiences.includes("เภสัชกร") && (
+                    <div className={styles.cpeBadge}>
+                      <FaGraduationCap className={styles.cpeIcon} />
+                      <span>CPE {event.cpe} หน่วยกิต</span>
+                    </div>
+                  )}
+                </div>
                 <div className={styles.eventDetails}>
                   <div className={styles.detailRow}>
                     <div className={styles.detailIcon}><MapPin size={16} /></div>

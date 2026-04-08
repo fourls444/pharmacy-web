@@ -1,5 +1,7 @@
-import { MapPin, Calendar, Users, Building2 } from "lucide-react";
+import { Building2 } from "lucide-react";
 import styles from "./EventList.module.css";
+import { FaGraduationCap } from "react-icons/fa";
+import { HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineUsers, HiOutlineBookmark } from "react-icons/hi";
 
 export interface StaticEvent {
   id: number;
@@ -12,6 +14,9 @@ export interface StaticEvent {
   count: string;
   image: string;
   status?: string;
+  cpe?: string;
+  category?: string;
+  attendees?: string;
 }
 
 interface EventListProps {
@@ -39,21 +44,29 @@ export default function EventList({ events }: EventListProps) {
             </div>
 
             <div className={styles.meetingInfo}>
-              <h3 className="ThaiFont">{item.title}</h3>
+              <div className={styles.titleWrapper}>
+                <h3 className="ThaiFont">{item.title}</h3>
+                {item.cpe && item.tags.includes("เภสัชกร") && (
+                  <div className={styles.cpeBadge}>
+                    <FaGraduationCap className={styles.cpeIcon} />
+                    <span>CPE {item.cpe} หน่วยกิต</span>
+                  </div>
+                )}
+              </div>
 
               <div className={styles.infoItem}>
-                <MapPin size={18} className={styles.grayIcon} />
+                <HiOutlineLocationMarker size={18} className={styles.grayIcon} />
                 <p className="ThaiFont">สถานที่ : {item.location}</p>
               </div>
 
               <div className={styles.infoItem}>
-                <Calendar size={18} className={styles.grayIcon} />
+                <HiOutlineCalendar size={18} className={styles.grayIcon} />
                 <p className="ThaiFont">วันที่จัดประชุม : {item.date}</p>
               </div>
 
               <div className={styles.participantsRow}>
                 <div className={styles.infoItem}>
-                  <Users size={18} className={styles.grayIcon} />
+                  <HiOutlineUsers size={18} className={styles.grayIcon} />
                   <span className="ThaiFont">ผู้เข้าร่วม :</span>
                   <div className={styles.tags}>
                     {item.tags.map((tag, idx) => (
@@ -65,13 +78,15 @@ export default function EventList({ events }: EventListProps) {
                       </span>
                     ))}
                   </div>
-                  <span className="ThaiFont">จำนวน : {item.count}</span>
+                  <span className="ThaiFont" style={{ color: '#475569', marginLeft: '0.5rem' }}>
+                    จำนวน : {item.count}
+                  </span>
                 </div>
               </div>
 
               <div className={styles.infoItem}>
-                <Building2 size={18} className={styles.grayIcon} />
-                <p className="ThaiFont">หน่วยงาน : ราชวิทยาลัย</p>
+                <HiOutlineBookmark size={18} className={styles.grayIcon} />
+                <p className="ThaiFont">หมวดหมู่ : {item.category || "ทั่วไป"}</p>
               </div>
             </div>
 

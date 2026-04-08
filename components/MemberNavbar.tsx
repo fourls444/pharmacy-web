@@ -70,16 +70,16 @@ export default function MemberNavbar() {
                             <span className={styles.userID}>{userId}</span>
                         </div>
                         <div className={styles.avatarWrapper}>
-                          <Image
-                              src="/images/member/image.png"
-                              alt="Avatar"
-                              width={40}
-                              height={40}
-                              className={styles.userAvatar}
-                          />
-                          <button className={styles.logoutIconBtn} onClick={logout} title="ออกจากระบบ">
-                            <LogOut size={12} />
-                          </button>
+                            <Image
+                                src="/images/member/image.png"
+                                alt="Avatar"
+                                width={40}
+                                height={40}
+                                className={styles.userAvatar}
+                            />
+                            <button className={styles.logoutIconBtn} onClick={logout} title="ออกจากระบบ">
+                                <LogOut size={12} />
+                            </button>
                         </div>
                     </div>
 

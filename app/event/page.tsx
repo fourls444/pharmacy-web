@@ -15,6 +15,8 @@ const meetings: StaticEvent[] = [
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
         image: "images/event/event1.jpg",
+        cpe: "10.0",
+        category: "การบริบาลเภสัชกรรม"
     },
     {
         id: 2,
@@ -26,6 +28,8 @@ const meetings: StaticEvent[] = [
         tags: ["เภสัชกร"],
         count: "100 คน",
         image: "/images/event/event2.jpg",
+        cpe: "5.5",
+        category: "วิจัยและนวัตกรรม"
     },
     {
         id: 3,
@@ -37,6 +41,8 @@ const meetings: StaticEvent[] = [
         tags: ["บุคคลทั่วไป"],
         count: "เต็ม",
         image: "/images/event/event3.jpg",
+        cpe: "3.0",
+        category: "สมุนไพร"
     },
     {
         id: 4,
@@ -48,7 +54,9 @@ const meetings: StaticEvent[] = [
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
         image: "/images/event/event4.jpg",
-        status: "past"
+        status: "past",
+        cpe: "2.0",
+        category: "วิจัยและนวัตกรรม"
     },
     {
         id: 5,
@@ -60,7 +68,9 @@ const meetings: StaticEvent[] = [
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
         image: "/images/event/event5.jpg",
-        status: "past"
+        status: "past",
+        cpe: "10.0",
+        category: "สมุนไพร"
     },
 ];
 

@@ -85,8 +85,8 @@ export default function Navbar() {
                     {/* 1.2 User Actions (Language & Login) */}
                     {/* Language Switcher */}
                     <div className={styles.langDropdownContainer} ref={dropdownRef}>
-                        <div 
-                            className={styles.langSwitch} 
+                        <div
+                            className={styles.langSwitch}
                             onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
                         >
                             <svg
@@ -112,10 +112,10 @@ export default function Navbar() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                         </div>
-                        
+
                         {isLangDropdownOpen && (
                             <div className={`${styles.langDropdown} ThaiFont`}>
-                                <button 
+                                <button
                                     className={`${styles.langDropdownItem} ${lang === "TH" ? styles.langDropdownItemActive : ""}`}
                                     onClick={() => {
                                         setLang("TH");
@@ -128,7 +128,7 @@ export default function Navbar() {
                                     </div>
                                     <span>TH</span>
                                 </button>
-                                <button 
+                                <button
                                     className={`${styles.langDropdownItem} ${lang === "EN" ? styles.langDropdownItemActive : ""}`}
                                     onClick={() => {
                                         setLang("EN");
