@@ -44,15 +44,35 @@ export default function BannerCarousel({
     return () => clearInterval(timer);
   }, [next, activeBanners.length]);
 
+  const renderOverlay = () => (
+    <div className={styles.overlay}>
+      <div className={styles.content}>
+        {isLoggedIn ? (
+          <>
+            <h2 className={styles.subtitle}>ระบบข้อมูลผู้ประกอบวิชาชีพ</h2>
+            <h1 className={styles.title}>เภสัชกร</h1>
+            <p className={styles.slogan}>
+              {slogan ? `“${slogan}”` : "“สนับสนุนการทำงานให้มีประสิทธิภาพและโปร่งใส”"}
+            </p>
+          </>
+        ) : (
+          <>
+            <h1 className={styles.title}>สภาเภสัชกรรม</h1>
+            <h2 className={styles.subtitle}>The Pharmacy Council of Thailand</h2>
+            <p className={styles.slogan}>
+              {slogan ? `“${slogan}”` : "“สภาเคียงข้าง สร้างวิชาชีพชั้นนำ ทำให้ประชาชนวางใจ”"}
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  );
+
   if (activeBanners.length === 0) {
     return (
       <section className={styles.banner}>
         <div className={styles.placeholder} />
-        {slogan && (
-          <div className={styles.overlay}>
-            <p className={styles.slogan}>"{slogan}"</p>
-          </div>
-        )}
+        {renderOverlay()}
       </section>
     );
   }
@@ -87,15 +107,7 @@ export default function BannerCarousel({
       </div>
 
       {/* Overlay (Council Name & Slogan) */}
-      <div className={styles.overlay}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>สภาเภสัชกรรม</h1>
-          <h2 className={styles.subtitle}>The Pharmacy Council of Thailand</h2>
-          <p className={styles.slogan}>
-            {slogan ? `“${slogan}”` : "“สภาเคียงข้าง สร้างวิชาชีพชั้นนำ ทำให้ประชาชนวางใจ”"}
-          </p>
-        </div>
-      </div>
+      {renderOverlay()}
 
       {/* Arrows */}
       {activeBanners.length > 1 && (
