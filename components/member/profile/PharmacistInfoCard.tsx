@@ -12,7 +12,7 @@ export default function PharmacistInfoCard({ userName, userId }: PharmacistInfoC
     return (
         <section>
             <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>ข้อมูลเภสัชกร</h2>
+                <h2 className={styles.sectionTitle}>รายละเอียดข้อมูลส่วนตัว</h2>
                 <Link href="/profile" className={styles.manageLink}>
                     จัดการข้อมูล <ChevronRight size={18} />
                 </Link>
@@ -21,7 +21,7 @@ export default function PharmacistInfoCard({ userName, userId }: PharmacistInfoC
             <div className={styles.profileCard}>
                 <div className={styles.imageSection}>
                     <Image
-                        src="/images/member/image.png"
+                        src="/images/public/member/image.png"
                         alt="Pharmacist Profile"
                         width={200}
                         height={200}

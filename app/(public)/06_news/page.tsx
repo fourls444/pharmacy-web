@@ -1,5 +1,5 @@
 import { getNews } from "@/lib/api";
-import NewsContainer from "@/components/news/NewsContainer";
+import NewsContainer from "@/components/public/06_news/NewsContainer";
 import Image from "next/image";
 import styles from "./news.module.css";
 

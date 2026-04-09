@@ -1,0 +1,58 @@
+.section {
+    max-width: 90%;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.serviceImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}

@@ -1,7 +1,7 @@
-import MeetingBanner from "@/components/meeting/MeetingBanner";
-import RecommendedMeeting from "@/components/meeting/RecommendedMeeting";
-import MeetingList, { StaticMeeting } from "@/components/meeting/MeetingList";
-import MeetingPagination from "@/components/meeting/MeetingPagination";
+import MeetingBanner from "@/components/public/05_meeting/MeetingBanner";
+import RecommendedMeeting from "@/components/public/05_meeting/RecommendedMeeting";
+import MeetingList, { StaticMeeting } from "@/components/public/05_meeting/MeetingList";
+import MeetingPagination from "@/components/public/05_meeting/MeetingPagination";
 import styles from "./meeting.module.css";
 
 const meetings: StaticMeeting[] = [

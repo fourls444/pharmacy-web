@@ -10,7 +10,7 @@
     margin: 0 auto;
 }
 
-.section h2 {
+.title {
     margin-bottom: 30px;
     font-size: 36px;
     font-weight: 700;
@@ -67,7 +67,7 @@
     object-fit: contain;
 }
 
-.popularCard h3 {
+.cardTitle {
     color: #797a2e;
     font-size: 26px;
     font-weight: 700;
@@ -76,7 +76,7 @@
     line-height: 1.2;
 }
 
-.popularCard p {
+.cardDesc {
     color: #444;
     font-size: 13px;
     line-height: 1.4;

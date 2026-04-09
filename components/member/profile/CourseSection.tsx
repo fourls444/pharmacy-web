@@ -19,7 +19,7 @@ const COURSE_DATA: CourseItem[] = [
     title: "CPAT210 การวิเคราะห์และพยากรณ์ความต้องการ และการวางแผนกำลังคนเภสัชกร",
     credits: "3 หน่วยกิต",
     expiryDate: "20/04/2569",
-    image: "/images/home/image1.png",
+    image: "/images/public/home/image1.png",
     isExpiringSoon: true,
   },
   {
@@ -27,14 +27,14 @@ const COURSE_DATA: CourseItem[] = [
     title: "Pharmacy Transformation: ปรับโมเดลร้านยาและระบบคลังสินค้าสู่ยุคดิจิทัล",
     credits: "1.5 หน่วยกิต",
     expiryDate: "01/08/2569",
-    image: "/images/home/image4.png",
+    image: "/images/public/home/image4.png",
   },
   {
     id: "3",
     title: "Clinical Practice Update: เจาะลึกแนวทางการจ่ายยาและอุบัติใหม่ประจำปี 2026",
     credits: "3 หน่วยกิต",
     expiryDate: "22/11/2569",
-    image: "/images/home/image5.png",
+    image: "/images/public/home/image5.png",
   },
 ];
 

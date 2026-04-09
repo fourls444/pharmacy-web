@@ -1,10 +1,10 @@
-import BannerCarousel from "@/components/home/BannerCarousel";
+import BannerCarousel from "@/components/public/01_home/BannerCarousel";
 import MemberBanner from "@/components/member/home/MemberBanner";
 import MemberOnlySection from "@/components/member/home/MemberOnlySection";
 import OtherServiceSection from "@/components/member/home/OtherServiceSection";
 import MemberHighlightSection from "@/components/member/home/MemberHighlightSection";
 import PopularServices from "@/components/member/service/PopularServices";
-import HomeMeetings from "@/components/home/HomeMeetings";
+import HomeMeetings from "@/components/public/01_home/HomeMeetings";
 import { getHomeContent, getPharmacistHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
 import styles from "./home.module.css";
 

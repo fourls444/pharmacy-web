@@ -9,7 +9,7 @@
     margin: auto;
 }
 
-.section h2 {
+.title {
     margin-bottom: 30px;
     font-size: 36px;
     font-weight: 700;
@@ -77,13 +77,13 @@
         min-width: auto;
     }
 
-    .section h2 {
+    .title {
         font-size: 28px;
     }
 }
 
 @media (max-width: 480px) {
-    .section h2 {
+    .title {
         font-size: 24px;
     }
 }

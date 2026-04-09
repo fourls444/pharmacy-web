@@ -81,7 +81,7 @@ export default function LoginPage() {
           {/* Left Side: Illustration/Image */}
           <div className={styles.cardLeft}>
             <Image
-              src="/images/login/Column.png"
+              src="/images/public/login/Column.png"
               alt="Pharmacist"
               fill
               className={styles.pharmacistImg}
@@ -95,7 +95,7 @@ export default function LoginPage() {
               <>
                 <div className={styles.formHeader}>
                   <Image
-                    src="/images/icon.jpg"
+                    src="/images/public/icon.jpg"
                     alt="Logo"
                     width={80}
                     height={80}
@@ -171,17 +171,17 @@ export default function LoginPage() {
 
                   <div className={styles.altLogin}>
                     <button type="button" className={`${styles.altBtn} ${styles.blueBtn}`}>
-                      <Image src="/images/login/thaid.png" alt="ThaiID" width={32} height={32} />
+                      <Image src="/images/public/login/thaid.png" alt="ThaiID" width={32} height={32} />
                       เข้าสู่ระบบด้วย ThaiID
                     </button>
 
                     <button type="button" className={`${styles.altBtn} ${styles.lightBlueBtn}`}>
-                      <Image src="/images/login/paotang.png" alt="PaoTang" width={32} height={32} />
+                      <Image src="/images/public/login/paotang.png" alt="PaoTang" width={32} height={32} />
                       เข้าสู่ระบบด้วย เป๋าตัง
                     </button>
 
                     <button type="button" className={`${styles.altBtn} ${styles.greenBtn}`}>
-                      <Image src="/images/login/tangrat.png" alt="TangRat" width={32} height={32} />
+                      <Image src="/images/public/login/tangrat.png" alt="TangRat" width={32} height={32} />
                       เข้าสู่ระบบด้วย ทางรัฐ
                     </button>
                   </div>
@@ -256,8 +256,8 @@ export default function LoginPage() {
         <div className={styles.footerContent}>
           <span className={styles.footerText}>ผ่านการรับรองมาตรฐานโดย</span>
           <div className={styles.footerLogos}>
-            <Image src="/images/login/etda.png" alt="ETDA" width={120} height={35} className={styles.etdaLogo} />
-            <Image src="/images/login/dopa.png" alt="Department of Provincial Administration" width={260} height={40} className={styles.dopaLogo} />
+            <Image src="/images/public/login/etda.png" alt="ETDA" width={120} height={35} className={styles.etdaLogo} />
+            <Image src="/images/public/login/dopa.png" alt="Department of Provincial Administration" width={260} height={40} className={styles.dopaLogo} />
           </div>
         </div>
       </footer>

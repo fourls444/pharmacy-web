@@ -1,4 +1,4 @@
-import AboutSidebar from "@/components/about/AboutSidebar";
+import AboutSidebar from "@/components/public/02_about/AboutSidebar";
 import styles from "./about.module.css";
 
 export default function AboutLayout({

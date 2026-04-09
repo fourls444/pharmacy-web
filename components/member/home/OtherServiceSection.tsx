@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../home/HomeSections.module.css";
+import styles from "@/components/public/01_home/HomeSections.module.css";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import MemberOnlySection from "./MemberOnlySection";

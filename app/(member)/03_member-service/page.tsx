@@ -1,4 +1,4 @@
-import ServiceBanner from "@/components/service/ServiceBanner";
+import ServiceBanner from "@/components/public/04_service/ServiceBanner";
 import PopularServices from "@/components/member/service/PopularServices";
 import ServiceList from "@/components/member/service/ServiceList";
 import { getServices, getPopularServices } from "@/lib/api";

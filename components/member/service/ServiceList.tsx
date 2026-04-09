@@ -17,7 +17,7 @@ export default function ServiceList({ services }: ServiceListProps) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionCon}>
-      <h2 className="ThaiFont">บริการเภสัชกร</h2>
+      <h2 className={`${styles.title} ThaiFont`}>บริการเภสัชกร</h2>
       <div className={styles.serviceListGrid}>
         {regularServices.map((item) => {
           const content = (

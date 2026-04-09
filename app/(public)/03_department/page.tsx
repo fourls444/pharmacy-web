@@ -1,10 +1,10 @@
 import { getAgencies } from "@/lib/api";
-import DepartmentStats from "@/components/department/DepartmentStats";
-import DepartmentAgencies from "@/components/department/DepartmentAgencies";
-import DepartmentColleges from "@/components/department/DepartmentColleges";
-import DepartmentNetwork from "@/components/department/DepartmentNetwork";
-import DepartmentInstitutions from "@/components/department/DepartmentInstitutions";
-import DepartmentOther from "@/components/department/DepartmentOther";
+import DepartmentStats from "@/components/public/03_department/DepartmentStats";
+import DepartmentAgencies from "@/components/public/03_department/DepartmentAgencies";
+import DepartmentColleges from "@/components/public/03_department/DepartmentColleges";
+import DepartmentNetwork from "@/components/public/03_department/DepartmentNetwork";
+import DepartmentInstitutions from "@/components/public/03_department/DepartmentInstitutions";
+import DepartmentOther from "@/components/public/03_department/DepartmentOther";
 import styles from "./department.module.css";
 
 export const dynamic = 'force-dynamic';

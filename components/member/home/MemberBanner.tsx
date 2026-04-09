@@ -26,7 +26,7 @@ export default function MemberBanner() {
             <img
               className={styles.oliveImage}
               alt="Olive"
-              src="/images/home/olive.png"
+              src="/images/public/home/olive.png"
             />
             <div className={styles.cardContent}>
               <h3 className={styles.mainValue}>10/10</h3>
@@ -44,7 +44,7 @@ export default function MemberBanner() {
             <img
               className={styles.oliveImage}
               alt="Olive"
-              src="/images/home/olive.png"
+              src="/images/public/home/olive.png"
             />
             <div className={styles.cardContent}>
               
@@ -61,7 +61,7 @@ export default function MemberBanner() {
             <img
               className={styles.oliveImage}
               alt="Olive"
-              src="/images/home/olive.png"
+              src="/images/public/home/olive.png"
             />
             <div className={styles.cardContent}>
               <h3 className={styles.mainValue}>สำเร็จ</h3>

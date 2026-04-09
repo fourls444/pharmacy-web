@@ -13,7 +13,7 @@ export default function PopularServices({ services }: PopularServicesProps) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionCon}>
-        <h2 className="ThaiFont">บริการยอดนิยม</h2>
+        <h2 className={`${styles.title} ThaiFont`}>บริการยอดนิยม</h2>
         <div className={styles.popularGrid}>
           {services.map((service) => (
             <Link
@@ -22,7 +22,6 @@ export default function PopularServices({ services }: PopularServicesProps) {
               className={styles.popularCard}
               target={service.linkUrl?.startsWith('http') ? "_blank" : "_self"}
               rel={service.linkUrl?.startsWith('http') ? "noopener noreferrer" : undefined}
-              style={{ textDecoration: 'none' }}
             >
               <div className={styles.iconCircle}>
                 {service.iconUrl ? (
@@ -31,10 +30,10 @@ export default function PopularServices({ services }: PopularServicesProps) {
                   <div style={{ width: '100%', height: '100%', backgroundColor: '#eee', borderRadius: '50%' }} />
                 )}
               </div>
-              <h3 className="ThaiFont" style={{ fontSize: '30px', lineHeight: 1.2 }}>
+              <h3 className={`${styles.cardTitle} ThaiFont`}>
                 {service.shortName || service.name}
               </h3>
-              <p className="ThaiFont" style={{ fontSize: '15px', whiteSpace: 'pre-wrap' }}>{service.description}</p>
+              <p className={`${styles.cardDesc} ThaiFont`}>{service.description}</p>
             </Link>
           ))}
         </div>

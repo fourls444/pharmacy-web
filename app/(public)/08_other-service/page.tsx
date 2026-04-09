@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import DocumentSearch from "@/components/other-service/DocumentSearch";
+import DocumentSearch from "@/components/public/08_other-service/DocumentSearch";
 import styles from "./other-service.module.css";
 
 const categories = [

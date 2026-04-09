@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import styles from "../../home/HomeNewsSection.module.css";
+import styles from "@/components/public/01_home/HomeNewsSection.module.css";
 import { News, NewsCategory } from "@/lib/api";
 
 interface MemberHighlightSectionProps {

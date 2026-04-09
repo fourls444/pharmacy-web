@@ -1,5 +1,5 @@
 import { getLawsByCategory } from "@/lib/api";
-import LawsContent from "@/components/laws/LawsContent";
+import LawsContent from "@/components/public/07_laws/LawsContent";
 import styles from "./laws.module.css";
 
 export const dynamic = 'force-dynamic';

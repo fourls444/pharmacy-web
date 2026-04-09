@@ -1,0 +1,313 @@
+/* === Section Wrapper === */
+.section {
+  padding: 4rem 1.5rem 3rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.sectionInner {
+  max-width: 90%; /* ขยายความกว้างให้พอสำหรับ 5 การ์ด */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #111827;
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 0 0 3rem;
+  line-height: 1.6;
+}
+
+/* === Carousel Container === */
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px; /* เพิ่มความสูงให้ตัวการ์ดที่สูงขึ้น */
+  margin-bottom: 2rem;
+  perspective: 1200px;
+}
+
+.carouselWrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(115, 115, 0, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.carouselTrack {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Individual Card === */
+.card {
+  position: absolute;
+  width: 340px; 
+  height: 420px; 
+  border-radius: 24px; 
+  overflow: hidden;
+  cursor: pointer;
+  backface-visibility: hidden;
+  background: #f3f4f6;
+  
+  /* 🔴 แยก transition เพื่อให้ z-index ทำงานทันที 100% */
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s ease;
+}
+
+.card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+/* 🔴 Card Positions — จัดแบบซ้อนกันแนวตรง (ไม่เอียงแล้ว) */
+.cardActive {
+  z-index: 10;
+  transform: translateX(0) scale(1.05) translateY(-20px);
+  opacity: 1;
+  box-shadow: 0 30px 60px rgba(115, 115, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+.cardActive:hover {
+  transform: translateX(0) scale(1.1) translateY(-30px);
+  filter: brightness(1.1);
+}
+
+.cardLeft1 {
+  z-index: 4;
+  transform: translateX(-70%) scale(0.85); /* ใช้ % เพื่อให้ยืดหยุ่น */
+  opacity: 0.95;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardLeft2 {
+  z-index: 3;
+  transform: translateX(-130%) scale(0.7);
+  opacity: 0.7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cardRight1 {
+  z-index: 4;
+  transform: translateX(70%) scale(0.85);
+  opacity: 0.95;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardRight2 {
+  z-index: 3;
+  transform: translateX(130%) scale(0.7);
+  opacity: 0.7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cardHidden {
+  z-index: 0;
+  
+  /* 🔴 แก้บรรทัดนี้: เอา translateX(0) ออก ให้มันแค่หดเล็กลงแล้วจางหายไป */
+  transform: scale(0.5); 
+  
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 🔴 Bottom Section (จัดกลุ่มปุ่มและข้อความ) */
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* === Navigation Arrows === */
+.navBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(115, 115, 0, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: #737300;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navBtn:hover {
+  background: #737300;
+  color: #ffffff;
+  border-color: #737300;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(115, 115, 0, 0.3);
+}
+
+.navBtn:active {
+  transform: scale(0.95);
+}
+
+/* === Slide Text Content === */
+.slideContent {
+  flex: 1;
+  padding: 0 3rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.slideTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  animation: slideInText 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.slideDesc {
+  font-size: 1.1rem;
+  color: #374151;
+  margin: 0;
+  line-height: 1.8;
+  white-space: pre-line;
+  animation: slideInText 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards both;
+}
+
+@keyframes slideInText {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* === Counter === */
+.counter {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #737300;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+/* === Dots === */
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db; /* สีเทาอ่อน */
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.dotActive {
+  width: 24px; /* ขยายเป็นวงรี */
+  border-radius: 4px;
+  background: #737300; /* สีเขียวมะกอก */
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .card { width: 280px; height: 360px; }
+  .carouselTrack { height: 380px; }
+  .carouselWrapper { min-height: 400px; }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle { font-size: 1.8rem; }
+  .card { width: 220px; height: 280px; }
+  .carouselTrack { height: 300px; }
+  .carouselWrapper { min-height: 320px; }
+  
+  .cardLeft1 { transform: translateX(-60%) scale(0.85); }
+  .cardRight1 { transform: translateX(60%) scale(0.85); }
+  
+  /* ซ่อนการ์ดใบที่ 4-5 ในจอมือถือ/แท็บเล็ตให้ดูไม่รก */
+  .cardLeft2, .cardRight2 {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .slideTitle { font-size: 1.4rem; }
+  /* แสดงปุ่มในมือถือ แต่ย่อขนาดลง */
+  .navBtn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  } 
+
+  /* จัดเรียงให้ปุ่มอยู่ข้างข้อความ หรือด้านล่าง */
+  .bottomSection {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .card { width: 180px; height: 240px; }
+  .carouselTrack { height: 260px; }
+  .carouselWrapper { min-height: 280px; }
+  
+  .cardLeft1 { transform: translateX(-50%) scale(0.85); }
+  .cardRight1 { transform: translateX(50%) scale(0.85); }
+}
