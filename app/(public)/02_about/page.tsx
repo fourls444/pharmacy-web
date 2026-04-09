@@ -43,7 +43,7 @@ export default function AboutHistoryPage() {
 
         <div className={styles.contentImageRow}>
           <Image
-            src="/images/about/list/imgabout1.png"
+            src="/images/public/about/list/imgabout1.png"
             alt="ประวัติสภาเภสัชกรรม"
             width={600}
             height={400}
@@ -141,7 +141,7 @@ export default function AboutHistoryPage() {
           <div className={styles.infoImageWrapper}>
             <img
               alt="วัตถุประสงค์การก่อตั้งสภาเภสัชกรรม"
-              src="/images/about/list/imgabout2.png"
+              src="/images/public/about/list/imgabout2.png"
               className={styles.infoImage}
             />
           </div>
@@ -166,7 +166,7 @@ export default function AboutHistoryPage() {
           <div className={styles.infoImageWrapper}>
             <img
               alt="อำนาจหน้าที่ของสภาเภสัชกรรม"
-              src="/images/about/list/imgabout3.png"
+              src="/images/public/about/list/imgabout3.png"
               className={styles.infoImage}
             />
           </div>

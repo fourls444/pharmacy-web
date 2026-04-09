@@ -14,7 +14,7 @@ const meetings: StaticMeeting[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "images/meeting/meeting1.jpg",
+        image: "/images/public/meeting/meeting1.jpg",
         cpe: "10.0",
         category: "การบริบาลเภสัชกรรม"
     },
@@ -27,7 +27,7 @@ const meetings: StaticMeeting[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["เภสัชกร"],
         count: "100 คน",
-        image: "/images/meeting/meeting2.jpg",
+        image: "/images/public/meeting/meeting2.jpg",
         cpe: "5.5",
         category: "วิจัยและนวัตกรรม"
     },
@@ -40,7 +40,7 @@ const meetings: StaticMeeting[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป"],
         count: "เต็ม",
-        image: "/images/meeting/meeting3.jpg",
+        image: "/images/public/meeting/meeting3.jpg",
         cpe: "3.0",
         category: "สมุนไพร"
     },
@@ -53,7 +53,7 @@ const meetings: StaticMeeting[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/meeting/meeting4.jpg",
+        image: "/images/public/meeting/meeting4.jpg",
         status: "past",
         cpe: "2.0",
         category: "วิจัยและนวัตกรรม"
@@ -67,7 +67,7 @@ const meetings: StaticMeeting[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/meeting/meeting5.jpg",
+        image: "/images/public/meeting/meeting5.jpg",
         status: "past",
         cpe: "10.0",
         category: "สมุนไพร"

@@ -51,7 +51,7 @@ export default async function ContactPage() {
                 <div className={styles.contactFormSection}>
                     <div className={styles.formImageWrapper}>
                         <Image
-                            src="/images/contact/Image2.png"
+                            src="/images/public/contact/Image2.png"
                             alt="Contact Form"
                             fill
                             className={styles.formImage}
@@ -104,7 +104,7 @@ export default async function ContactPage() {
                 <div className={styles.infoSection}>
                     <div className={styles.buildingImageWrapper}>
                         <Image
-                            src="/images/contact/Image.png"
+                            src="/images/public/contact/Image.png"
                             alt="Contact Section Image"
                             fill
                             className={styles.buildingImage}

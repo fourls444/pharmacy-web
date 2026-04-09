@@ -17,7 +17,7 @@ const MOCK_MEETINGS = [
     audiences: ["บุคคลทั่วไป", "เภสัชกร"],
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image1.png",
+    image: "/images/public/home/image1.png",
     cpe: "10.0",
   },
   {
@@ -30,7 +30,7 @@ const MOCK_MEETINGS = [
     audiences: ["เภสัชกร"],
     capacity: "100 คน",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image2.png",
+    image: "/images/public/home/image2.png",
     cpe: "5.5",
   },
   {
@@ -43,7 +43,7 @@ const MOCK_MEETINGS = [
     audiences: ["บุคคลทั่วไป"],
     capacity: "เต็ม",
     agency: "ราชวิทยาลัย",
-    image: "/images/home/image3.png",
+    image: "/images/public/home/image3.png",
     cpe: "3.0",
   },
 ];

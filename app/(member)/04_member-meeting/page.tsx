@@ -15,7 +15,7 @@ const meetings = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["สมาชิก", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/meeting/meeting1.jpg",
+        image: "/images/public/meeting/meeting1.jpg",
         cpe: "10.0",
         category: "การบริบาลเภสัชกรรม"
     },

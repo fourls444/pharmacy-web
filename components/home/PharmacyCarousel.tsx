@@ -16,32 +16,32 @@ const slides: SlideData[] = [
   {
     title: "เภสัชกรชุมชน",
     desc: "ดูแลสุขภาพประชาชนในร้านยา\nให้คำปรึกษาด้านยาและสุขภาพเบื้องต้น",
-    image: "/images/home/image1.png",
+    image: "/images/public/home/image1.png",
   },
   {
     title: "เภสัชกรโรงพยาบาล",
     desc: "จัดการระบบยาในโรงพยาบาล ตรวจสอบใบสั่งยา\nและให้คำปรึกษาแก่ทีมสหสาขาวิชาชีพ",
-    image: "/images/home/image2.png",
+    image: "/images/public/home/image2.png",
   },
   {
     title: "เภสัชกรอุตสาหกรรม",
     desc: "ผู้เชี่ยวชาญด้านกระบวนการผลิต การควบคุมคุณภาพ\nและการพัฒนาสูตรยาในโรงงานอุตสาหกรรม",
-    image: "/images/home/image3.png",
+    image: "/images/public/home/image3.png",
   },
   {
     title: "เภสัชกรคุ้มครองผู้บริโภค",
     desc: "เฝ้าระวังความปลอดภัยด้านยา คุ้มครองผู้บริโภค\nจากผลิตภัณฑ์สุขภาพที่ไม่ได้มาตรฐาน",
-    image: "/images/home/image4.png",
+    image: "/images/public/home/image4.png",
   },
   {
     title: "เภสัชกรการตลาด",
     desc: "ให้ข้อมูลผลิตภัณฑ์ยาแก่บุคลากรทางการแพทย์\nวางแผนกลยุทธ์การตลาดยาอย่างมีจริยธรรม",
-    image: "/images/home/image5.png",
+    image: "/images/public/home/image5.png",
   },
   {
     title: "เภสัชกรวิจัยและพัฒนา",
     desc: "วิจัยและพัฒนายาใหม่ ทดสอบทางคลินิก\nเพื่อสร้างนวัตกรรมทางเภสัชกรรม",
-    image: "/images/home/image1.png",
+    image: "/images/public/home/image1.png",
   },
 ];
 
