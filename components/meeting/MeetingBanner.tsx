@@ -1,6 +1,6 @@
-import styles from "./EventBanner.module.css";
+import styles from "./MeetingBanner.module.css";
 
-export default function EventBanner() {
+export default function MeetingBanner() {
   return (
     <section className={styles.banner}>
       <div className={styles.bannerOverlay}>

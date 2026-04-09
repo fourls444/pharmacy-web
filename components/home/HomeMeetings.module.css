@@ -1,4 +1,4 @@
-/* === Home Events Section === */
+/* === Home Meetings Section === */
 .section {
   padding: 4rem 1.5rem;
   background: white;
@@ -40,21 +40,21 @@
   opacity: 0.7;
 }
 
-/* === Event List === */
-.eventList {
+/* === Meeting List === */
+.meetingList {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.eventCard {
+.meetingCard {
   display: flex;
   gap: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #A7A365;
 }
 
-.eventCard:last-child {
+.meetingCard:last-child {
   
  margin-bottom: 4rem;
 }
@@ -83,15 +83,15 @@
   margin-top: 0.25rem;
 }
 
-/* === Event Content === */
-.eventContent {
+/* === Meeting Content === */
+.meetingContent {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.eventTitle {
+.meetingTitle {
   font-size: 1.25rem;
   font-weight: 700;
   color: #1f2937;
@@ -127,7 +127,7 @@
   color: #7b7b1e;
 }
 
-.eventDetails {
+.meetingDetails {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -187,8 +187,8 @@
   color: #854d0e;
 }
 
-/* === Event Image === */
-.eventImageWrapper {
+/* === Meeting Image === */
+.meetingImageWrapper {
   width: 280px;
   height: 180px;
   border-radius: 16px;
@@ -196,7 +196,7 @@
   flex-shrink: 0;
 }
 
-.eventImage {
+.meetingImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -204,11 +204,11 @@
 
 /* === Responsive === */
 @media (max-width: 1024px) {
-  .eventCard {
+  .meetingCard {
     flex-wrap: wrap;
   }
   
-  .eventImageWrapper {
+  .meetingImageWrapper {
     width: 240px;
   }
 }
@@ -218,7 +218,7 @@
     max-width: 95%;
   }
 
-  .eventCard {
+  .meetingCard {
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -239,7 +239,7 @@
     margin-top: 0;
   }
 
-  .eventImageWrapper {
+  .meetingImageWrapper {
     width: 100%;
     height: 200px;
   }
@@ -268,7 +268,8 @@
     font-size: 1.5rem;
   }
   
-  .eventTitle {
+  .meetingTitle {
     font-size: 1.15rem;
   }
 }
+

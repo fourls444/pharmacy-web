@@ -15,7 +15,7 @@ export default function MemberBanner() {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>สถานะของฉัน</h2>
-          <Link href="/member/profile" className={styles.manageLink}>
+          <Link href="/profile" className={styles.manageLink}>
             จัดการข้อมูล <ChevronRight size={16} />
           </Link>
         </div>

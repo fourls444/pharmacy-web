@@ -1,0 +1,64 @@
+import BannerCarousel from "@/components/home/BannerCarousel";
+import LicenseSearch from "@/components/home/LicenseSearch";
+import HomeStats from "@/components/home/HomeStats";
+import PharmacyCarousel from "@/components/home/PharmacyCarousel";
+import HomeMeetings from "@/components/home/HomeMeetings";
+import PublicServiceSection from "@/components/home/PublicServiceSection";
+import PharmacistRolesSection from "@/components/home/PharmacistRolesSection";
+import HomeNewsSection from "@/components/home/HomeNewsSection";
+import PopularServices from "@/components/member/service/PopularServices";
+import { getHomeContent, getWebSettings, getNews, getPopularServices } from "@/lib/api";
+import styles from "./home.module.css";
+
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const [homeContent, settings, allNews, popularServices] = await Promise.all([
+    getHomeContent(),
+    getWebSettings(),
+    getNews(),
+    getPopularServices(),
+  ]);
+
+  const highlights = allNews.filter(n => n.isHighlight && n.status === 'published');
+  const regularNews = allNews.filter(n => !n.isHighlight && n.status === 'published');
+
+  const activeBanners = (homeContent.banners || [])
+    .filter(b => b.active)
+    .sort((a, b) => a.order - b.order);
+
+  return (
+    <div className={styles.page}>
+      {/* === Banner Carousel 16:9 === (Everyone) */}
+      <BannerCarousel
+        banners={activeBanners}
+        slogan={settings.slogan}
+      />
+
+      {/* 1. ค้นหารายชื่อ */}
+      <section className={styles.searchSection}>
+        <div className={styles.searchContainer}>
+          <LicenseSearch />
+        </div>
+      </section>
+
+      {/* 2. บริการประชาชน */}
+      <PublicServiceSection />
+
+      {/* 3. บริการเภสัชกร */}
+      <PopularServices services={popularServices} />
+      <PharmacistRolesSection />
+
+      {/* 4. 6 สาขาวิชาชีพเภสัชกร */}
+      <PharmacyCarousel />
+      <HomeStats />
+
+      {/* 5. การประชุม */}
+      <HomeMeetings />
+
+      {/* 6. เรื่องเด่นและข่าวสาร (Full) */}
+      <HomeNewsSection highlights={highlights} newsList={regularNews} />
+    </div>
+  );
+}
+

@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import styles from "./EventPagination.module.css";
+import styles from "./MeetingPagination.module.css";
 
-export default function EventPagination() {
+export default function MeetingPagination() {
   return (
     <div className={styles.pagination}>
       <button className={styles.arrowBtn}>

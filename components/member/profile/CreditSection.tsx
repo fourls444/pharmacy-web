@@ -28,7 +28,7 @@ export default function CreditSection() {
         <div className={styles.sectionSpacer}>
             <div className={styles.sectionHeader}>
                 <h2 className={styles.sectionTitle}>หน่วยกิตของฉัน</h2>
-                <Link href="/member/education" className={styles.secondaryLink}>
+                <Link href="/learning" className={styles.secondaryLink}>
                     งานการศึกษา <ChevronRight size={18} />
                 </Link>
             </div>

@@ -1,8 +1,8 @@
 import { MapPin, Calendar, Users, Building2, ChevronLeft, ChevronRight } from "lucide-react";
-import styles from "./RecommendedEvent.module.css";
+import styles from "./RecommendedMeeting.module.css";
 import { FaGraduationCap } from "react-icons/fa";
 
-export default function RecommendedEvent() {
+export default function RecommendedMeeting() {
   return (
     <section className={styles.recommendSection}>
       <div className={styles.sectionHeader}>
@@ -18,7 +18,7 @@ export default function RecommendedEvent() {
       </div>
 
       <div className={styles.recommendCard}>
-        <img src="/images/event/event1.jpg" className={styles.recommendImage} alt="Meeting preview" />
+        <img src="/images/meeting/meeting1.jpg" className={styles.recommendImage} alt="Meeting preview" />
         <div className={styles.recommendContent}>
           <div className={styles.titleWrapper}>
             <h3 className="ThaiFont">

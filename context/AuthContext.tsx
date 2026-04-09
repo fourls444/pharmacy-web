@@ -37,17 +37,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("isLoggedIn", isLoggedIn.toString());
+      // Set cookie for middleware (expires in 7 days)
+      if (isLoggedIn) {
+        document.cookie = "isLoggedIn=true; path=/; max-age=" + 60 * 60 * 24 * 7;
+      } else {
+        document.cookie = "isLoggedIn=; path=/; max-age=0";
+      }
     }
   }, [isLoggedIn, isLoaded]);
 
   const login = () => {
     setIsLoggedIn(true);
+    // document.cookie is set in the useEffect above
     router.push("/home");
   };
 
   const logout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem("isLoggedIn");
+    document.cookie = "isLoggedIn=; path=/; max-age=0";
     router.push("/home");
   };
 
@@ -57,6 +65,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     <AuthContext.Provider
       value={{
         isLoggedIn,
+
         userName: "ภก. สมชาย รักชาติ",
         userId: "ภ.12345",
         login,

@@ -13,7 +13,7 @@ const navLinks = [
     { name: "เกี่ยวกับองค์กร", href: "/about" },
     { name: "หน่วยงาน", href: "/department", hasDropdown: true },
     { name: "งานบริการ", href: "/service" },
-    { name: "งานประชุม", href: "/event" },
+    { name: "งานประชุม", href: "/meeting" },
     { name: "ข่าวสาร", href: "/news" },
     { name: "กฎหมาย", href: "/laws" },
     { name: "บริการอื่นๆ", href: "/other-service" },

@@ -9,13 +9,13 @@ import styles from "./MemberNavbar.module.css";
 
 const memberLinks = [
     { name: "หน้าแรก", href: "/home" },
-    { name: "ข้อมูลของฉัน", href: "/member/profile" },
+    { name: "ข้อมูลของฉัน", href: "/profile" },
     { name: "งานบริการ", href: "/service" },
-    { name: "งานประชุม", href: "/event" },
-    { name: "การศึกษา", href: "/member/education" },
-    { name: "การสมัครงาน", href: "/member/jobs" },
-    { name: "เครื่องมือเภสัชกร", href: "/member/tools" },
-    { name: "สินค้าสภา", href: "/member/shop" },
+    { name: "งานประชุม", href: "/meeting" },
+    { name: "การศึกษา", href: "/learning" },
+    { name: "การสมัครงาน", href: "/careers" },
+    { name: "เครื่องมือเภสัชกร", href: "/tools" },
+    { name: "สินค้าสภา", href: "/store" },
 ];
 
 export default function MemberNavbar() {

@@ -1,9 +1,9 @@
 import { Building2 } from "lucide-react";
-import styles from "./EventList.module.css";
+import styles from "./MeetingList.module.css";
 import { FaGraduationCap } from "react-icons/fa";
 import { HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineUsers, HiOutlineBookmark } from "react-icons/hi";
 
-export interface StaticEvent {
+export interface StaticMeeting {
   id: number;
   day: string;
   month: string;
@@ -19,11 +19,11 @@ export interface StaticEvent {
   attendees?: string;
 }
 
-interface EventListProps {
-  events: StaticEvent[];
+interface MeetingListProps {
+  meetings: StaticMeeting[];
 }
 
-export default function EventList({ events }: EventListProps) {
+export default function MeetingList({ meetings }: MeetingListProps) {
   return (
     <section className={styles.meetingList}>
       <div className={styles.tabContainer}>
@@ -33,7 +33,7 @@ export default function EventList({ events }: EventListProps) {
       </div>
 
       <div className={styles.listContainer}>
-        {events.map((item) => (
+        {meetings.map((item) => (
           <div
             key={item.id}
             className={`${styles.meetingItem} ${item.status === "past" ? styles.pastItem : ""}`}

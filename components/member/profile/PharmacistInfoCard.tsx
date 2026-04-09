@@ -13,7 +13,7 @@ export default function PharmacistInfoCard({ userName, userId }: PharmacistInfoC
         <section>
             <div className={styles.sectionHeader}>
                 <h2 className={styles.sectionTitle}>ข้อมูลเภสัชกร</h2>
-                <Link href="/member/profile/edit" className={styles.manageLink}>
+                <Link href="/profile" className={styles.manageLink}>
                     จัดการข้อมูล <ChevronRight size={18} />
                 </Link>
             </div>

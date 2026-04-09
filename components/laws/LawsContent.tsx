@@ -5,7 +5,7 @@ import { LawItem } from "@/lib/api";
 import LawsSearch from "./LawsSearch";
 import LawsSidebar from "./LawsSidebar";
 import LawsList from "./LawsList";
-import styles from "../../app/laws/laws.module.css";
+import styles from "@/app/(public)/laws/laws.module.css";
 
 const CATEGORIES = [
   { key: "law1", label: "พระราชบัญญัติวิชาชีพเภสัชกรรม" },

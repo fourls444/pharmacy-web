@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { MapPin, Calendar, Users, Building2 } from "lucide-react";
-import styles from "./HomeEvents.module.css";
+import styles from "./HomeMeetings.module.css";
 import { FaGraduationCap } from "react-icons/fa";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
 
-const MOCK_EVENTS = [
+const MOCK_MEETINGS = [
   {
     id: 1,
     day: "2",
@@ -48,72 +48,72 @@ const MOCK_EVENTS = [
   },
 ];
 
-export default function HomeEvents() {
+export default function HomeMeetings() {
   return (
     <section className={styles.section}>
       <Container>
-        <SectionHeader title="การประชุม" viewAllHref="/event" />
+        <SectionHeader title="การประชุม" viewAllHref="/meeting" />
 
-        <div className={styles.eventList}>
-          {MOCK_EVENTS.map((event) => (
-            <div key={event.id} className={styles.eventCard}>
+        <div className={styles.meetingList}>
+          {MOCK_MEETINGS.map((meeting) => (
+            <div key={meeting.id} className={styles.meetingCard}>
               {/* Date Box */}
               <div className={styles.dateBox}>
-                <span className={styles.dateDay}>{event.day}</span>
-                <span className={styles.dateMonth}>{event.month}</span>
+                <span className={styles.dateDay}>{meeting.day}</span>
+                <span className={styles.dateMonth}>{meeting.month}</span>
               </div>
 
-              {/* Event Content */}
-              <div className={styles.eventContent}>
+              {/* Meeting Content */}
+              <div className={styles.meetingContent}>
                 <div className={styles.titleWrapper}>
-                  <h3 className={styles.eventTitle}>{event.title}</h3>
-                  {event.cpe && event.audiences.includes("เภสัชกร") && (
+                  <h3 className={styles.meetingTitle}>{meeting.title}</h3>
+                  {meeting.cpe && meeting.audiences.includes("เภสัชกร") && (
                     <div className={styles.cpeBadge}>
                       <FaGraduationCap className={styles.cpeIcon} />
-                      <span>CPE {event.cpe} หน่วยกิต</span>
+                      <span>CPE {meeting.cpe} หน่วยกิต</span>
                     </div>
                   )}
                 </div>
-                <div className={styles.eventDetails}>
+                <div className={styles.meetingDetails}>
                   <div className={styles.detailRow}>
                     <div className={styles.detailIcon}><MapPin size={16} /></div>
-                    <span>สถานที่ : {event.location}</span>
+                    <span>สถานที่ : {meeting.location}</span>
                   </div>
                   <div className={styles.detailRow}>
                     <div className={styles.detailIcon}><Calendar size={16} /></div>
-                    <span>วันที่จัดประชุม : {event.dateRange}</span>
+                    <span>วันที่จัดประชุม : {meeting.dateRange}</span>
                   </div>
                   <div className={styles.detailRowFlex}>
                     <div className={styles.audiencesWrapper}>
                       <div className={styles.detailIcon}><Users size={16} /></div>
                       <span className={styles.participantLabel}>ผู้เข้าร่วม :</span>
                       <div className={styles.badges}>
-                        {event.audiences.includes("บุคคลทั่วไป") && (
+                        {meeting.audiences.includes("บุคคลทั่วไป") && (
                           <Badge>บุคคลทั่วไป</Badge>
                         )}
-                        {event.audiences.includes("เภสัชกร") && (
+                        {meeting.audiences.includes("เภสัชกร") && (
                           <Badge active>เภสัชกร</Badge>
                         )}
                       </div>
                     </div>
-                    <span>จำนวน : {event.capacity}</span>
+                    <span>จำนวน : {meeting.capacity}</span>
                   </div>
                   <div className={styles.detailRow}>
                     <div className={styles.detailIcon}><Building2 size={16} /></div>
-                    <span>หน่วยงาน : {event.agency}</span>
+                    <span>หน่วยงาน : {meeting.agency}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Event Image */}
-              <div className={styles.eventImageWrapper}>
+              {/* Meeting Image */}
+              <div className={styles.meetingImageWrapper}>
                 <Image
                   unoptimized={true}
-                  src={event.image}
-                  alt={event.title}
+                  src={meeting.image}
+                  alt={meeting.title}
                   width={280}
                   height={180}
-                  className={styles.eventImage}
+                  className={styles.meetingImage}
                 />
               </div>
             </div>

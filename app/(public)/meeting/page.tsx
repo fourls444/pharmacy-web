@@ -1,10 +1,10 @@
-import EventBanner from "@/components/event/EventBanner";
-import RecommendedEvent from "@/components/event/RecommendedEvent";
-import EventList, { StaticEvent } from "@/components/event/EventList";
-import EventPagination from "@/components/event/EventPagination";
-import styles from "./event.module.css";
+import MeetingBanner from "@/components/meeting/MeetingBanner";
+import RecommendedMeeting from "@/components/meeting/RecommendedMeeting";
+import MeetingList, { StaticMeeting } from "@/components/meeting/MeetingList";
+import MeetingPagination from "@/components/meeting/MeetingPagination";
+import styles from "./meeting.module.css";
 
-const meetings: StaticEvent[] = [
+const meetings: StaticMeeting[] = [
     {
         id: 1,
         day: "2",
@@ -14,7 +14,7 @@ const meetings: StaticEvent[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "images/event/event1.jpg",
+        image: "images/meeting/meeting1.jpg",
         cpe: "10.0",
         category: "การบริบาลเภสัชกรรม"
     },
@@ -27,7 +27,7 @@ const meetings: StaticEvent[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["เภสัชกร"],
         count: "100 คน",
-        image: "/images/event/event2.jpg",
+        image: "/images/meeting/meeting2.jpg",
         cpe: "5.5",
         category: "วิจัยและนวัตกรรม"
     },
@@ -40,7 +40,7 @@ const meetings: StaticEvent[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป"],
         count: "เต็ม",
-        image: "/images/event/event3.jpg",
+        image: "/images/meeting/meeting3.jpg",
         cpe: "3.0",
         category: "สมุนไพร"
     },
@@ -53,7 +53,7 @@ const meetings: StaticEvent[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/event/event4.jpg",
+        image: "/images/meeting/meeting4.jpg",
         status: "past",
         cpe: "2.0",
         category: "วิจัยและนวัตกรรม"
@@ -67,21 +67,21 @@ const meetings: StaticEvent[] = [
         date: "02 พ.ค. 2569 - 13 ก.ย. 2569",
         tags: ["บุคคลทั่วไป", "เภสัชกร"],
         count: "100 คน",
-        image: "/images/event/event5.jpg",
+        image: "/images/meeting/meeting5.jpg",
         status: "past",
         cpe: "10.0",
         category: "สมุนไพร"
     },
 ];
 
-export default function MeetingsPage() {
+export default function PublicMeetingPage() {
     return (
         <div className={styles.pageWrapper}>
-            <EventBanner />
+            <MeetingBanner />
             <div className={styles.container}>
-                <RecommendedEvent />
-                <EventList events={meetings} />
-                <EventPagination />
+                <RecommendedMeeting />
+                <MeetingList meetings={meetings} />
+                <MeetingPagination />
             </div>
         </div>
     );

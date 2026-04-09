@@ -1,11 +1,11 @@
 .section {
-    
+
     margin: auto;
     padding: 40px 20px;
     background: #ffffff;
 }
 
-.sectionCon{
+.sectionCon {
     max-width: 90%;
     margin: 0 auto;
 }
